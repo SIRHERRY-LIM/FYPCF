@@ -1,0 +1,214 @@
+body {
+	height: 100vh;
+	background: linear-gradient(118.95deg, #3D5AF1 5.69%, rgba(122, 32, 238, 0.56) 90.99%);
+
+}
+
+.container {
+	height: 90vh;
+	background: linear-gradient(145.32deg, #FFFFFF -0.59%, rgba(196, 196, 196, 0) 96%);
+	;
+	width: 35%;
+	border: 1px solid #FFFFFF;
+	backdrop-filter: blur(5px);
+	margin-top: 2%;
+	border-radius: 30px;
+	opacity: 0.9;
+
+	align-self: center;
+	margin: auto;
+	margin-top: 2.5%;
+
+}
+
+#icon {
+	padding-left: 35%;
+	padding-top: 3%;
+}
+
+#welcome {
+	position: absolute;
+	margin-top: 2%;
+	left: 14%;
+
+	font-size: xx-large;
+	color: black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	text-align: center;
+	margin: auto;
+	align-self: center;
+
+
+}
+
+#small-title {
+	position: absolute;
+	top: 30%;
+	left: 25%;
+	font-family: Verdana,
+		Geneva,
+		Tahoma,
+		sans-serif;
+	font-size: medium;
+	color: darkblue;
+	margin: auto;
+	align-self: center;
+	text-align: center;
+
+}
+
+#button-admin {
+	position: absolute;
+	top: 40%;
+	right: 10%;
+	background-color: rgba(198, 198, 198, 0);
+	border: 1px solid #FFFFFF;
+	color: black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: medium;
+	font-weight: 500;
+	border-radius: 10px;
+	width: 80%;
+	height: 6%;
+}
+
+#button-admin:focus {
+	background-color: deepskyblue;
+
+}
+
+#button-dd {
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	background-color: rgba(198, 198, 198, 0);
+	border: 1px solid #FFFFFF;
+	color: black;
+	font-family: Verdana,
+		Geneva,
+		Tahoma,
+		sans-serif;
+	border-radius: 10px;
+	width: 80%;
+	height: 6%;
+	font-size: medium;
+	font-weight: 500;
+
+}
+
+#button-dd:focus {
+	background-color: deepskyblue;
+
+}
+
+#button-qp {
+	position: absolute;
+	top: 60%;
+	right: 10%;
+	background-color: rgba(198, 198, 198, 0);
+	border: 1px solid #FFFFFF;
+	color: black;
+	font-family: Verdana,
+		Geneva,
+		Tahoma,
+		sans-serif;
+	border-radius: 10px;
+	width: 80%;
+	height: 6%;
+	font-size: medium;
+	font-weight: 500;
+}
+
+#button-qp:focus {
+	background-color: deepskyblue;
+}
+
+#button-hp {
+	position: absolute;
+	top: 70%;
+	left: 10%;
+	background-color: rgba(198, 198, 198, 0);
+	border: 1px solid #FFFFFF;
+	color: black;
+	font-family: Verdana,
+		Geneva,
+		Tahoma,
+		sans-serif;
+	border-radius: 10px;
+	width: 80%;
+	height: 6%;
+	font-size: medium;
+	font-weight: 500;
+
+}
+
+#button-hp:focus {
+	background-color: deepskyblue;
+}
+
+#button-lecturer {
+	position: absolute;
+	top: 80%;
+	left: 10%;
+	background-color: rgba(198, 198, 198, 0);
+	border: 1px solid #FFFFFF;
+	color: black;
+	font-family: Verdana,
+		Geneva,
+		Tahoma,
+		sans-serif;
+	border-radius: 10px;
+	width: 80%;
+	height: 6%;
+	font-size: medium;
+	font-weight: 500;
+
+}
+
+#button-lecturer:focus {
+	background-color: deepskyblue;
+}
+
+@media only screen and (max-width:1200px) and (min-width:601px) {
+
+	.container {
+		width: 65%;
+		height: 95%;
+		align-content: center;
+	}
+
+	#welcome {
+		left: 8%;
+		right: 8%;
+	}
+
+	#small-title {
+		left: auto;
+		right: 29%;
+	}
+
+
+}
+
+@media only screen and (max-width:600px) {
+
+
+	.container {
+		width: 65%;
+		height: 95%;
+
+	}
+
+	#welcome {
+		left: 5%;
+
+		text-align: center;
+		margin-bottom: 2%;
+	}
+
+	#small-title {
+		/* margin-top: 30%; */
+		left: 1%;
+
+	}
+}
