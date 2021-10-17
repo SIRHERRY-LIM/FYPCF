@@ -1,0 +1,107 @@
+body {
+	height: 95vh;
+	background: linear-gradient(118.95deg, #3D5AF1 5.69%, rgba(122, 32, 238, 0.56) 90.99%);
+	overflow: hidden;
+
+}
+
+.container {
+	height: 90%;
+	background: linear-gradient(145.32deg, #FFFFFF -0.59%, rgba(196, 196, 196, 0) 96%);
+	;
+	width: 35%;
+	border: 1px solid #FFFFFF;
+	backdrop-filter: blur(5px);
+	margin-top: 2%;
+	border-radius: 30px;
+	opacity: 0.9;
+
+	align-self: center;
+	margin: auto;
+	margin-top: 3%;
+	align-content: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	border-left: solid white;
+	border-bottom: solid white;
+}
+
+.container .FCIicon {
+	align-self: center;
+	margin-left: 39%;
+	margin-top: 8%;
+}
+
+#Title {
+	text-align: center;
+	margin-top: 3%;
+	font-size: x-large;
+}
+
+
+.form-group #name {
+	margin-left: -1%;
+	margin-top: 5%;
+}
+
+.form-group #email {
+	margin-left: -1%;
+}
+
+.row .col #password {
+	margin-left: 2%;
+}
+
+.row .col #password1 {
+	margin-left: -2%;
+}
+
+#button {
+	margin-top: 6%;
+	margin-left: 1.5%;
+	background-color: rgba(198, 198, 198, 0);
+	border: 1px solid #FFFFFF;
+	color: black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: medium;
+	font-weight: 500;
+	border-radius: 10px;
+	width: 97%;
+	height: 6%;
+}
+
+#button:focus {
+	background-color: deepskyblue;
+}
+
+#text {
+	margin-top: 5%;
+	text-align: center;
+}
+
+@media only screen and (max-width:1159px) and (min-width:1012px) {
+	.container {
+		width: 40%;
+	}
+
+}
+
+@media only screen and (max-width:1011px) and (min-width:700px) {
+	.container {
+		width: 57%;
+	}
+
+}
+
+@media only screen and (max-width:699px) and (min-width:578px) {
+	.container {
+		width: 68%;
+	}
+
+}
+
+@media only screen and (max-width:577px) {
+	.container {
+		width: 90%;
+	}
+
+}

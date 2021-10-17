@@ -1,129 +1,149 @@
 .FkiLogo {
-    position: absolute;
-    left: 3%;
-    top: 4%;
+	position: absolute;
+	left: 2%;
+	top: 4%;
 
 }
 
 .boxWord {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    position: absolute;
-    left: 12%;
-    top: 4%;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	position: absolute;
+	left: 12%;
+	top: 4%;
 }
 
+
 .icon {
-    position: absolute;
-    left: 1%;
-    top: 40%;
+	position: absolute;
+	left: 1%;
+	top: 40%;
 
 }
 
 .purple-container {
-    position: absolute;
-    width: 60%;
-    height: 100%;
-    left: 40%;
-    top: 0%;
-    background-color: rgba(103, 38, 240, 0.35);
+	position: absolute;
+	width: 60%;
+	height: 100%;
+	left: 40%;
+	top: 0%;
+	background-color: rgba(103, 38, 240, 0.35);
+
 }
 
 
 .login-glass {
-    position: absolute;
-    width: 96%;
-    height: 80%;
-    left: 2%;
-    top: 10%;
-    border-radius: 5%;
-    background: linear-gradient(296.28deg, rgba(255, 255, 255, 0.84) 0.66%,
-            rgba(255, 255, 255, 0) 95.83%);
-    backdrop-filter: blur(10px);
-    border-radius: solid white;
-    opacity: 0.9;
+	position: absolute;
+	width: 96%;
+	height: 80%;
+	left: 2%;
+	top: 10%;
+	border-radius: 4%;
+	background: linear-gradient(296.28deg, rgba(255, 255, 255, 0.84) 0.66%,
+			rgba(255, 255, 255, 0) 95.83%);
+	backdrop-filter: blur(20px);
+	opacity: 0.8;
+	border-left: solid white;
+	border-bottom: solid white;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
 
+.login-glass #LoginTitle {
+	text-align: center;
+	margin-top: 6%;
+}
 
-.select #select {
-    color: black;
-    background-color: ivory;
-    border-color: rgba(255, 255, 255, 0.822);
-    margin-bottom: 2%;
-    filter: blur(1.5 rem);
-    opacity: 0.6;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 10px;
-    width: 45%;
-    text-align: center;
+.login-glass #login-form {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.form-group {
+	margin-left: 2%;
+	margin-top: 3%;
+}
+
+.form-group #Email {
+	width: 98%;
+	backdrop-filter: blur(20px);
+	opacity: 0.8;
+	font-size: large;
+
+}
+
+.form-group #Password {
+	width: 98%;
+	backdrop-filter: blur(20px);
+	opacity: 0.8;
+	font-size: large;
 }
 
 #Login-Button {
-    background-color: rgba(77, 20, 199, 0.35);
-    width: 100%;
-    color: black;
-    font-weight: bold;
-    margin-top: 4%;
-    opacity: 0.6;
-    border-radius: 10px;
+	background-color: rgba(77, 20, 199, 0.35);
+	width: 96%;
+	color: black;
+	font-weight: bold;
+	margin-top: 4%;
+	opacity: 0.6;
+	border-radius: 10px;
+	margin-left: 2%;
 }
 
 #Login-Button:focus {
-    background-color: rgb(195, 122, 243);
+	background-color: rgb(195, 122, 243);
 }
 
 @media only screen and (max-width:1024px) {
-    .FkiLogo {
-        top: 6%;
-        bottom: 4%;
-        left: 22%;
-    }
+	.FkiLogo {
+		top: 6%;
+		bottom: 4%;
+		left: 22%;
+	}
 
-    #FCI {
-        font-size: 40px;
-        padding-left: 20%;
-        font-weight: 500;
+	#FCI {
+		font-size: 40px;
+		padding-left: 20%;
+		font-weight: 500;
 
-    }
+	}
 
-    #small-title {
-        padding-left: 20%;
+	#small-title {
+		padding-left: 20%;
 
-    }
+	}
 
-    .boxWord {
+	.boxWord {
 
-        top: 4%;
-        left: 35%;
+		top: 4%;
+		left: 35%;
 
-    }
+	}
 
-    .purple-container {
-        position: absolute;
-        height: 75%;
-        left: 1%;
-        width: 97%;
-        top: 27%;
-    }
+	.purple-container {
+		position: absolute;
+		height: 75%;
+		left: 1%;
+		width: 97%;
+		top: 27%;
+	}
 
-    .login-glass {
-        position: absolute;
-        height: 95%;
-        top: 2%;
-        width: 97%;
-        padding-bottom: 5%;
+	.login-glass {
+		position: absolute;
+		height: 95%;
+		top: 2%;
+		width: 97%;
+		padding-bottom: 5%;
 
-        margin-top: 0%;
-    }
+		margin-top: 0%;
+	}
 
-    #Login-Button {
-        margin-bottom: 2%;
-        padding-bottom: 1%;
-    }
+	#Login-Button {
+		margin-bottom: 2%;
+		padding-bottom: 1%;
+	}
 
-    .icon {
-        top: 97%;
+	.icon {
+		top: 97%;
 
-    }
+	}
 
 }

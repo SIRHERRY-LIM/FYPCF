@@ -57,7 +57,7 @@ body {
 
 }
 
-#button-admin {
+.btn {
 	position: absolute;
 	top: 40%;
 	right: 10%;

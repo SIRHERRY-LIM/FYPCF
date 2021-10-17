@@ -7,9 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="<?php echo base_url() ?>assets/https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/styles.css">
-	<link href="<?php echo base_url() ?>assets/css/WelcomePage.css" rel="stylesheet" type="text/css">
+	<link href="<?php echo base_url() ?>assets/css/register.css" rel="stylesheet" type="text/css">
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
@@ -30,7 +30,7 @@
 	<link href="<?php echo base_url() ?>assets/css/v4-shims.min.css" rel="stylesheet" type="text/css">
 
 
-	<title>Welcome</title>
+	<title>Admin Registration</title>
 	<link rel=" icon" href="<?php echo base_url() ?>assets/images/FCILogo.png">
 </head>
 
@@ -48,27 +48,40 @@
 				<path d="M140.81 65.9452L122.695 56.0913L66.6272 85.653L87.3293 95.5068L140.81 65.9452Z" fill="#3D7DA0" />
 				<path d="M87.0417 95.2541L66.9147 86.4109V158.925L87.0417 167.769V150.082V95.2541Z" fill="#4AA4BF" stroke="black" stroke-opacity="0.01" />
 			</svg>
-
-
-			<p id="welcome"> Welcome to FCI UMS</p>
-			<p id="small-title">Please Choose Access Type </p>
-
-			<a href="http://localhost/FYPCF/Auth/admin_login"><button type="button" class="btn btn-primary btn-lg" id="button-admin">
-					Admin</button></a>
-			<button type=" button" class="btn btn-primary btn-lg" id="button-dd">
-				Dean/Deputy Dean
-			</button>
-			<button type="button" class="btn btn-primary btn-lg" id="button-qp">
-				The Quality Panel
-			</button>
-			<button type="button" class="btn btn-primary btn-lg" id="button-hp">
-				Head of Program
-			</button>
-			<button type="button" class="btn btn-primary btn-lg" id="button-lecturer">
-				Lecturer
-			</button>
-
 		</div>
+
+		<p id="Title">Register Account Admin </p>
+
+
+		<form method="POST" action="<?= base_url('Register/admin_register'); ?>">
+
+			<div class="form-group">
+				<input type="text" class="form-control" name="name" id="name" placeholder="Full Name" required>
+			</div>
+
+
+			<div class="form-group">
+				<input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+					<?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
+				</div>
+
+				<div class="col">
+					<input type="password" class="form-control" name="password1" id="password1" placeholder="Confirm Password" required>
+
+				</div>
+			</div>
+
+			<button type="submit" class="btn btn-primary" id="button">Register</button>
+		</form>
+
+		<footer id="text">Already Have an Account?&nbsp;<strong>Login</strong>
+		</footer>
+	</div>
 
 	</div>
 
