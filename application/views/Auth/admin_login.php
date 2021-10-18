@@ -191,7 +191,7 @@
 			<?=
 			$this->session->flashdata('message'); ?>
 
-			<form method="POST" action="<?= base_url('login/admin_login'); ?>">
+			<form method="POST" action="<?= base_url('Admin_Controller/admin_login'); ?>">
 
 				<div class="form-group">
 					<label for="Email">Email address</label>

@@ -52,7 +52,7 @@ class admin_register extends CI_Controller
 			');
 
 
-			redirect('Auth');
+			redirect('Admin_Controller/Auth');
 		}
 	}
 }

@@ -35,7 +35,7 @@ class admin_login extends CI_Controller
 					];
 
 					$this->session->set_userdata($data);
-					redirect('admin');
+					redirect('Admin_Controller/admin');
 				} else {
 					$this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                     Wrong password!
@@ -44,7 +44,7 @@ class admin_login extends CI_Controller
                     </button>
                     </div>');
 
-					redirect('auth');
+					redirect('Admin_Controller/auth');
 				}
 			} else {
 
@@ -54,7 +54,7 @@ class admin_login extends CI_Controller
             <span aria-hidden="true">&times;</span>
             </button>
             </div>');
-				redirect('auth');
+				redirect('Admin_Controller/auth');
 			}
 		} else {
 			$this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -63,7 +63,7 @@ class admin_login extends CI_Controller
             <span aria-hidden="true">&times;</span>
             </button>
             </div>');
-			redirect('auth');
+			redirect('Admin_Controller/auth');
 		}
 	}
 }

@@ -52,8 +52,7 @@
 
 			<p id="welcome"> Welcome to FCI UMS</p>
 			<p id="small-title">Please Choose Access Type </p>
-
-			<a href="http://localhost/FYPCF/Auth/admin_login"><button type="button" class="btn btn-primary btn-lg" id="button-admin">
+			<a href="Admin_Controller/admin_login"> <button type="submit" class="btn btn-primary btn-lg" id="button-admin">
 					Admin</button></a>
 			<button type=" button" class="btn btn-primary btn-lg" id="button-dd">
 				Dean/Deputy Dean
