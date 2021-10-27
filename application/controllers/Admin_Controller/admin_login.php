@@ -19,9 +19,13 @@ class admin_login extends CI_Controller
 	private function _login()
 	{
 		$email = $this->input->post('email');
+
 		$password = $this->input->post('password');
 
-		$admin = $this->db->get_where('admin', ['admin_email' => $email])->row_array();
+		$admin = $this->db->get_where('admin', [
+			'admin_email' => $email,
+
+		])->row_array();
 
 		if ($admin) {
 
@@ -31,7 +35,8 @@ class admin_login extends CI_Controller
 
 					$data = [
 
-						'email' => $admin['admin_email']
+						'email' => $admin['admin_email'],
+
 					];
 
 					$this->session->set_userdata($data);

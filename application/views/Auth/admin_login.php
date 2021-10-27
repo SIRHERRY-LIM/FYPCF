@@ -195,12 +195,12 @@
 
 				<div class="form-group">
 					<label for="Email">Email address</label>
-					<input type="email" class="form-control" name="email" id="Email" autofocus required placeholder="name@ums.edu.my">
+					<input type="email" class="form-control" name="email" id="Email" autofocus required placeholder="Please enter your email">
 				</div>
 
 				<div class="form-group">
 					<label for="Password">Password</label>
-					<input type="password" class="form-control" name="password" id="Password" placeholder="Please enter password" autofocus required>
+					<input type="password" class="form-control" name="password" id="Password" placeholder="Please enter your password" autofocus required>
 				</div>
 
 

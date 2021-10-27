@@ -10,12 +10,13 @@ class Admin extends CI_Controller
 			'admin',
 			[
 
-				'admin_email' => $this->session->userdata('email')
+				'admin_email' => $this->session->userdata('email'),
+
 
 			]
 		)->row_array();
 
-		echo 'hello admin' . $data['admin']['admin_name'];
+		$this->load->view('Dashboard/admin_dashboard', $data);
 	}
 
 
