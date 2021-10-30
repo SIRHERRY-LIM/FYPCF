@@ -4,6 +4,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Admin extends CI_Controller
 {
 
+	function __construct()
+	{
+		parent::__construct();
+		if (!isset($this->session->userdata['email'])) {
+			redirect('Admin_Controller');
+		}
+	}
+
 	public function index()
 	{
 		$data['admin'] = $this->db->get_where(

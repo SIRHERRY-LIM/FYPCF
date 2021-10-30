@@ -1,0 +1,55 @@
+
+
+.home-section .card-batch{
+	background:linear-gradient(115.18deg, rgba(250, 255, 3, 0.75) 0%, rgba(252, 48, 3, 0.5) 0%, rgba(255, 245, 10, 0.87) 57.4%, rgba(247, 252, 3, 0.29) 99.47%);
+	backdrop-filter: blur(10px);
+	border-left: solid gold 5px;
+	border-bottom: solid gold 5px;
+	border-radius: 8%;
+	
+	
+}
+
+.home-section .card-submission {
+	background: linear-gradient(115.18deg, #11A6FA 13.88%, rgba(93, 232, 223, 0.71) 99.45%, rgba(255, 255, 253, 0.75) 99.46%);
+	position: absolute;
+	backdrop-filter: blur(10px);
+	left:34%;
+	top: 12.4%;
+	height: 29%;
+	border-radius: 8%;
+    border-left: solid rgb(3, 137, 247) 5px;
+    border-bottom: solid rgb(3, 137, 247) 5px;
+}
+
+.home-section .card-incomplete {
+	background: linear-gradient(115.18deg, #FB0303 0%, rgba(250, 153, 7, 0.97) 46.01%, rgba(249, 154, 154, 0.85) 55.04%, #FB4F29 100%);
+	position: absolute;
+	backdrop-filter: blur(10px);
+	left: 62%;
+	top: 12.4%;
+	height: 29%;
+	border-radius: 8%;
+	border-left: solid red 5px;
+	border-bottom: solid red 5px;
+}
+
+
+.home-section .admin-container .table-admin {
+	background:linear-gradient(165.81deg, rgba(103, 38, 240, 0.74) 0%, rgba(103, 38, 240, 0.6) 0.01%, rgba(103, 38, 240, 0.47) 65.1%);
+align-content: center;
+padding-top: 1%;
+padding-left: 1%;
+padding-right: 3%;
+
+
+}
+
+
+.home-section .admin-container .table-admin .table{
+	background: linear-gradient(296.28deg, rgba(255, 255, 255, 0.84) 0.66%, rgba(255, 255, 255, 0) 95.83%);
+	backdrop-filter: blur(4px);
+	padding-right: 1%;
+
+
+}

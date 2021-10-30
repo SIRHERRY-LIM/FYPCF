@@ -145,36 +145,70 @@
 		</ul>
 	</div>
 	<section class="home-section">
-		<div class="text" style="margin-left: 6%;">Welcome Admin, <strong style="color:mediumslateblue;"> <?= $admin['admin_name']; ?></strong></div>
 
-		<div class="card-batch" style="width: 18rem; margin-left: 6%;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Current Batch</h5>
-				<p class="card-text">
-				<h3 style="text-align: center;"><strong>2021</strong></h3>
-				</p>
-				<p class="semester" style="text-align: center;">Semester 1
-				</p>
-			</div>
+		<div class="text" style="margin-left: 2%; margin-bottom: 3%;">
+			<h2>Admin Profile</h2>
 		</div>
 
-		<div class="card-submission" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Complete Submission</h5>
-				<p class="card-text">
-				<h1 style="text-align: center;"><strong>70%</strong></h1>
-				</p>
-			</div>
+
+		<div class="list-text" style=" text-align:center; margin-top:-2%;">
+			<h3>List of Admin<button class="btn btn-small btn-primary" style="margin-left: 2%;background: linear-gradient(90.29deg, #9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"><i class="fas fa-plus fa-sm"></i> Add Admin</button>
+			</h3>
+
 		</div>
 
-		<div class="card-incomplete" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Incomplete Submission</h5>
-				<p class="card-text">
-				<h1 style="text-align: center;"><strong>30%</strong></h1>
-				</p>
+
+
+		<div class="admin-container container-fluid">
+			<div class="table-admin table-responsive text-nowrap">
+				<!--Table-->
+				<table class="table table-striped table-bordered table-hover table-sm">
+
+					<!--Table head-->
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Password</th>
+							<th>Status</th>
+							<th>Date Created</th>
+							<th>Options</th>
+						</tr>
+					</thead>
+					<!--Table head-->
+
+					<!--Table body-->
+					<tbody>
+						<?php $no = 1;
+						foreach ($admin as $a) : ?>
+							<tr>
+								<th scope="row"><?php echo $no++  ?></th>
+								<td><?php echo $a->admin_name  ?></td>
+								<td><?php echo $a->admin_email  ?></td>
+								<td><?php echo $a->admin_password  ?></td>
+								<td><?php echo $a->is_active ?></td>
+								<td><?php echo $a->date_created ?></td>
+								<td>
+									<div class="btn btn-small btn-primary"><i class="fa fa-edit"></i></div>
+									<div class="btn btn-small btn-danger"><i class="fa fa-trash"></i></div>
+
+								</td>
+							</tr>
+
+						<?php endforeach; ?>
+					</tbody>
+					<!--Table body-->
+
+
+				</table>
+				<!--Table-->
 			</div>
+
 		</div>
+
+
+
 
 
 
