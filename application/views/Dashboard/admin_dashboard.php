@@ -80,6 +80,14 @@
 			</li>
 
 			<li>
+				<a href="Admin_list">
+					<i class='fas fa-list'></i>
+					<span class="links_name">Admin List</span>
+				</a>
+				<span class="tooltip">Admin List</span>
+			</li>
+
+			<li>
 				<a href="#">
 					<i class='bi bi-file-earmark-easel' style="color: white;"></i>
 					<span class="links_name">Lecturers Account</span>

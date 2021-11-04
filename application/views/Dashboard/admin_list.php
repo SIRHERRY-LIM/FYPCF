@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/admin_dashboard.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/Admin_dash_homesection.css">
-	<!-- <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/sidebar_profile.css"> -->
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/sidebar_profile.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 	<!-- FontAwesome CSS -->
@@ -153,77 +153,75 @@
 	</div>
 	<section class="home-section">
 
-		<div class="text">
-			<h2 style="text-align: center;">Admin Profile</h2>
-		</div>
 
 
-		<div class="purple-cont container-fluid">
-			<div class="profile container-fluid">
-
-				<div class="image">
-					<img src="<?= base_url('assets/images/profile/') . $admin['image'];
-								?>" class=" image responsive">
-				</div>
 
 
-				<div class="form-group" id="name">
-					<h4><i class="far fa-user " style="color:grey"></i> <?= $admin['admin_name']; ?>
-					</h4>
-				</div>
 
-				<div class="form-group" id="email">
-					<h4><i class="far fa-envelope " style="color:grey"></i> <?= $admin['admin_email']; ?>
-					</h4>
-				</div>
-
-				<div class="form-group" id="email">
-					<h4><i class="fas fa-calendar-alt " style="color:grey"></i> Join <?= $admin['date_created']; ?>
-					</h4>
-				</div>
-				<h3>
-					<?= anchor(
-						' admin_profile',
-						'<button class="btn btn-small btn-primary"
-		style=" margin-top:1.5%; width:100%;
+		<div class="list-text" style=" text-align:center; margin-top:2%; margin-bottom:2% ">
+			<h3>List of Admin <?= anchor(
+									'Admin_Controller/admin_profile/input',
+									'<button class="btn btn-small btn-primary"
+		style="margin-left: 2%;
 		background: linear-gradient(90.29deg, 
 		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);">
-		<i class="fas fa-key fa-sm"></i> Change Password</button>'
-					) ?>
-					<h3>
-
-
-			</div>
+		<i class="fas fa-plus fa-sm"></i> Add Admin</button>'
+								) ?>
+			</h3>
 
 		</div>
 
 
-		<!-- 
-		<div class="profile-con container-fluid">
-			<div class="card mb-3" style="max-width: 650px; height:90%;">
-				<div class="row no-gutters">
-					<div class="con col-md-4 container-fluid">
-						<img src="<?= base_url('assets/images/profile/') . $admin['image'];
-									?>" class=" image responsive">
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-						</div>
-					</div>
-				</div>
+
+		<div class="admin-container container-fluid">
+			<div class="table-admin table-responsive text-nowrap">
+				<!--Table-->
+				<table class="table table-striped table-bordered table-hover table-sm">
+
+					<!--Table head-->
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Status</th>
+							<th>Date Created</th>
+
+						</tr>
+					</thead>
+					<!--Table head-->
+
+					<!--Table body-->
+					<tbody>
+						<?php $no = 1;
+
+						foreach ($admin as $a) : ?>
+
+							<tr>
+								<th scope="row"><?php echo $no++  ?></th>
+								<td><?php echo $a->admin_name  ?></td>
+								<td><?php echo $a->admin_email  ?></td>
+								<td><?php
+									if (($a->is_active) == 1) {
+										echo 'active';
+									} else {
+										echo 'disable';
+									}
+									echo $a->is_active ?></td>
+								<td><?php echo $a->date_created ?></td>
+
+							</tr>
+
+						<?php endforeach; ?>
+					</tbody>
+					<!--Table body-->
+
+
+				</table>
+				<!--Table-->
 			</div>
-		</div> -->
 
-
-
-
-
-
-
-
+		</div>
 
 
 

@@ -1,25 +1,23 @@
-
-
-.home-section .card-batch{
-	background:linear-gradient(115.18deg, rgba(250, 255, 3, 0.75) 0%, rgba(252, 48, 3, 0.5) 0%, rgba(255, 245, 10, 0.87) 57.4%, rgba(247, 252, 3, 0.29) 99.47%);
+.home-section .card-batch {
+	background: linear-gradient(115.18deg, rgba(250, 255, 3, 0.75) 0%, rgba(252, 48, 3, 0.5) 0%, rgba(255, 245, 10, 0.87) 57.4%, rgba(247, 252, 3, 0.29) 99.47%);
 	backdrop-filter: blur(10px);
 	border-left: solid gold 5px;
 	border-bottom: solid gold 5px;
 	border-radius: 8%;
-	
-	
+
+
 }
 
 .home-section .card-submission {
 	background: linear-gradient(115.18deg, #11A6FA 13.88%, rgba(93, 232, 223, 0.71) 99.45%, rgba(255, 255, 253, 0.75) 99.46%);
 	position: absolute;
 	backdrop-filter: blur(10px);
-	left:34%;
+	left: 34%;
 	top: 12.4%;
 	height: 29%;
 	border-radius: 8%;
-    border-left: solid rgb(3, 137, 247) 5px;
-    border-bottom: solid rgb(3, 137, 247) 5px;
+	border-left: solid rgb(3, 137, 247) 5px;
+	border-bottom: solid rgb(3, 137, 247) 5px;
 }
 
 .home-section .card-incomplete {
@@ -36,20 +34,115 @@
 
 
 .home-section .admin-container .table-admin {
-	background:linear-gradient(165.81deg, rgba(103, 38, 240, 0.74) 0%, rgba(103, 38, 240, 0.6) 0.01%, rgba(103, 38, 240, 0.47) 65.1%);
-align-content: center;
-padding-top: 1%;
-padding-left: 1%;
-padding-right: 3%;
+	background: linear-gradient(165.81deg, rgba(103, 38, 240, 0.74) 0%, rgba(103, 38, 240, 0.6) 0.01%, rgba(103, 38, 240, 0.47) 65.1%);
+	align-content: center;
+	padding-top: 1%;
+	padding-left: 1%;
+	padding-right: 1%;
 
 
 }
 
 
-.home-section .admin-container .table-admin .table{
+.home-section .admin-container .table-admin .table {
 	background: linear-gradient(296.28deg, rgba(255, 255, 255, 0.84) 0.66%, rgba(255, 255, 255, 0) 95.83%);
 	backdrop-filter: blur(4px);
 	padding-right: 1%;
+}
 
+.home-section .admin-form {
+	width: 98%;
+}
+
+.home-section .admin-form .form-group {
+	margin-bottom: 3%;
+	margin-top: 3%;
+
+}
+
+.home-section .admin-form #button {
+	margin-top: 4%;
+
+	background: linear-gradient(90.29deg, #9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);
+	border: 1px solid #FFFFFF;
+	color: black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: medium;
+	font-weight: 500;
+	border-radius: 10px;
+	width: 100%;
+	height: 6%;
+}
+
+
+.home-section .admin-form .status {
+
+	margin-top: 2%;
+	border-color: lightgrey;
+	width: 50%;
+	height: 35px;
+	border-radius: 5px;
+	color: lightslategrey;
+
+
+}
+
+.home-section .text {
+	width: 97%;
+	margin: auto center;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.home-section .purple-cont {
+	background: linear-gradient(165.81deg, rgba(103, 38, 240, 0.74) 0%, rgba(103, 38, 240, 0.6) 0.01%, rgba(103, 38, 240, 0.47) 65.1%);
+	width: 50%;
+	height: 70vh;
+	align-content: center;
+	padding-top: 2%;
+	padding-bottom: 2%;
+
+}
+
+.home-section .purple-cont .profile {
+	background: linear-gradient(296.28deg,
+			rgba(255, 255, 255, 0.84) 0.66%, rgba(255, 255, 255, 0) 95.83%);
+	margin: auto;
+	width: 100%;
+	height: 100%;
+    border-radius: 15px;
+	border-left: solid white;
+	border-bottom: solid white;
+}
+
+.home-section .purple-cont .profile .image {
+	width: 130px;
+	height: 160px;
+	padding-top: 2%;
+	padding-bottom: 3%;
+	margin-bottom: 2%;
+	margin: auto;
+}
+
+.home-section .purple-cont .profile .form-group {
+	background-color: white;
+	margin-top: 3%;
+	padding-left: 2%;
+	height: 32px;
+	padding-top: 0.5%;
+	opacity: 0.6;
+	border-radius: 5px;
+
+}
+
+@media (max-width: 893px){
+
+.home-section .purple-cont {
+width: 85%;
+}
+
+.sidebar{
+	height: 120vh;
+}
 
 }

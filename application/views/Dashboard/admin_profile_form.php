@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/admin_dashboard.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/Admin_dash_homesection.css">
-	<!-- <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/sidebar_profile.css"> -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 	<!-- FontAwesome CSS -->
@@ -66,21 +65,21 @@
 				<span class="tooltip">Search</span>
 			</li>
 			<li>
-				<a href="Admin">
+				<a href="<?= base_url('Admin_Controller/Admin') ?>">
 					<i class='bx bx-grid-alt'></i>
 					<span class="links_name">Dashboard</span>
 				</a>
 				<span class="tooltip">Dashboard</span>
 			</li>
 			<li>
-				<a href="admin_profile">
+				<a href="<?= base_url('Admin_Controller/admin_profile') ?>">
 					<i class='bx bx-user'></i>
 					<span class="links_name">Profile</span>
 				</a>
 				<span class="tooltip">Profile</span>
 			</li>
 			<li>
-				<a href="Admin_list">
+				<a href="<?= base_url('Admin_Controller/Admin_list') ?>">
 					<i class='fas fa-list'></i>
 					<span class="links_name">Admin List</span>
 				</a>
@@ -153,85 +152,43 @@
 	</div>
 	<section class="home-section">
 
-		<div class="text">
-			<h2 style="text-align: center;">Admin Profile</h2>
+
+		<div class="text" style="margin-left: 2%; margin-bottom: 3%;">
+			<h2>Add New Admin</h2>
 		</div>
 
+		<div class=" admin-form container-fluid">
+			<?= $this->session->flashdata('message'); ?>
+			<form method="POST" action="<?= base_url('Admin_Controller/Admin_Form'); ?>">
 
-		<div class="purple-cont container-fluid">
-			<div class="profile container-fluid">
-
-				<div class="image">
-					<img src="<?= base_url('assets/images/profile/') . $admin['image'];
-								?>" class=" image responsive">
+				<div class="form-group">
+					<input type="text" class="form-control" name="name" id="name" placeholder="Full Name" required>
 				</div>
 
 
-				<div class="form-group" id="name">
-					<h4><i class="far fa-user " style="color:grey"></i> <?= $admin['admin_name']; ?>
-					</h4>
+				<div class="form-group">
+					<input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
 				</div>
 
-				<div class="form-group" id="email">
-					<h4><i class="far fa-envelope " style="color:grey"></i> <?= $admin['admin_email']; ?>
-					</h4>
+				<div class="row">
+					<div class="col">
+						<input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+						<?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
+					</div>
+
+					<div class="col">
+						<input type="password" class="form-control" name="password1" id="password1" placeholder="Confirm Password" required>
+
+					</div>
 				</div>
 
-				<div class="form-group" id="email">
-					<h4><i class="fas fa-calendar-alt " style="color:grey"></i> Join <?= $admin['date_created']; ?>
-					</h4>
-				</div>
-				<h3>
-					<?= anchor(
-						' admin_profile',
-						'<button class="btn btn-small btn-primary"
-		style=" margin-top:1.5%; width:100%;
-		background: linear-gradient(90.29deg, 
-		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);">
-		<i class="fas fa-key fa-sm"></i> Change Password</button>'
-					) ?>
-					<h3>
+				<button type="submit" class="btn btn-primary" id="button">Register</button>
+			</form>
 
 
-			</div>
+
 
 		</div>
-
-
-		<!-- 
-		<div class="profile-con container-fluid">
-			<div class="card mb-3" style="max-width: 650px; height:90%;">
-				<div class="row no-gutters">
-					<div class="con col-md-4 container-fluid">
-						<img src="<?= base_url('assets/images/profile/') . $admin['image'];
-									?>" class=" image responsive">
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	</section>

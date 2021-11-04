@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class admin_register extends CI_Controller
+class Admin_Form extends CI_Controller
 {
 	public function __construct()
 	{
@@ -29,8 +29,16 @@ class admin_register extends CI_Controller
 
 		if ($this->form_validation->run() == false) {
 
+			$this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Admin information is invalid
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+			
+			');
 
-			$this->load->view('Register/admin_register');
+			$this->load->view('Dashboard/admin_profile_form');
 		} else {
 
 			$data = [
@@ -45,7 +53,7 @@ class admin_register extends CI_Controller
 
 			$this->db->insert('admin', $data);
 			$this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Congratulation!</strong>  Your account has been created. Please Login
+                <strong>Congratulation!</strong>  Admin account has successfully created
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -54,7 +62,15 @@ class admin_register extends CI_Controller
 			');
 
 
-			redirect('Admin_Controller/Auth');
+			redirect('Admin_Controller/Admin_Form/back');
 		}
+	}
+
+
+
+	public function back()
+	{
+
+		$this->load->view('Dashboard/admin_profile_form');
 	}
 }
