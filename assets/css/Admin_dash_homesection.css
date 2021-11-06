@@ -135,6 +135,23 @@
 
 }
 
+.home-section .edit_profile{
+	margin: 1%;
+}
+
+.home-section .row .form-group{
+	width: 98%;
+}
+
+
+
+
+
+.home-section{
+	overflow-x: hidden;
+}
+
+
 @media (max-width: 893px){
 
 .home-section .purple-cont {

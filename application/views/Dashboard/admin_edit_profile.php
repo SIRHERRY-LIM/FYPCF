@@ -153,42 +153,73 @@
 	<section class="home-section">
 
 
-		<div class="text" style="margin-left: 2%; margin-bottom: 3%;">
-			<h2>Add New Admin</h2>
+		<div class="text" style="margin-left: 2.5%; margin-bottom: 3%;">
+			<h2>Edit Admin Profile</h2>
 		</div>
 
-		<div class="admin-form container-fluid">
-			<?= $this->session->flashdata('message'); ?>
-			<form method="POST" action="<?= base_url('Admin_Controller/Admin_Form'); ?>">
+
+		<!-- <?= $this->session->flashdata('message'); ?> -->
+
+		<div class="edit_profile row ">
+
+			<div class="col">
+
+				<?php echo form_open_multipart('Admin_Controller/admin_profile/edit_profile'); ?>
+				<div class="form-group">
+					<input type="text" class="form-control" name="name" id="name" placeholder="Full Name" value="<?= $admin['admin_name']; ?>" required>
+				</div>
+
 
 				<div class="form-group">
-					<input type="text" class="form-control" name="name" id="name" placeholder="Full Name" required>
+					<input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<?= $admin['admin_email']; ?>" readonly>
 				</div>
 
-
-				<div class="form-group">
-					<input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
-				</div>
-
-				<div class="row">
-					<div class="col">
-						<input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
-						<?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
-					</div>
+				<div class="image form-group row">
 
 					<div class="col">
-						<input type="password" class="form-control" name="password1" id="password1" placeholder="Confirm Password" required>
+						<h4 style="color: gray;">Picture </h4>
+					</div>
+
+					<div class="image-con container-fluid">
+						<div class="row container-fluid">
+							<div class="col-sm-4 ">
+								<img src="<?= base_url('assets/images/profile/') . $admin['image'];
+
+											?>" class="img-fluid">
+							</div>
+							<div class="col-sm-9">
+								<div class="custom-file">
+									<input type="file" id="image" name="image" class="image responsive" style="background:linear-gradient(90.29deg, #9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);">
+
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group row"></div>
+						<div class="col-sm-10">
+
+							<button type="submit" class="btn btn-primary" style="background:linear-gradient(132.16deg, rgba(9, 205, 248, 0.89) 2.15%, rgba(13, 78, 244, 0.75) 52.07%, rgba(20, 107, 239, 0.74) 100.53%);
+							width:50%">Edit</button>
+
+
+						</div>
 
 					</div>
+
+
+
 				</div>
 
-				<button type="submit" class="btn btn-primary" id="button">Register</button>
-			</form>
+			</div>
 
-
+		</div>
 
 
 		</div>
+
+		</div>
+
+
 
 
 	</section>

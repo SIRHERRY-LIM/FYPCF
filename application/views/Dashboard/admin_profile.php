@@ -157,6 +157,7 @@
 			<h2 style="text-align: center;">Admin Profile</h2>
 		</div>
 
+		<?= $this->session->flashdata('message'); ?>
 
 		<div class="purple-cont container-fluid">
 			<div class="profile container-fluid">
@@ -181,56 +182,34 @@
 					<h4><i class="fas fa-calendar-alt " style="color:grey"></i> Join <?= $admin['date_created']; ?>
 					</h4>
 				</div>
-				<h3>
-					<?= anchor(
-						' admin_profile',
-						'<button class="btn btn-small btn-primary"
-		style=" margin-top:1.5%; width:100%;
+
+				<div class="row">
+					<div class="col">
+						<?= anchor(
+							'Admin_Controller/admin_profile/edit_profile',
+							'<button class="btn btn-small btn-primary"
+		style=" margin-top:1.5%; width:100%; opacity:0.7;
+		background: linear-gradient(132.16deg, rgba(9, 205, 248, 0.89) 2.15%, rgba(13, 78, 244, 0.75) 52.07%, rgba(20, 107, 239, 0.74) 100.53%);">
+		<i class="fas fa-pencil-alt fa-sm"></i> Edit Profile</button>'
+						) ?>
+					</div>
+
+					<div class="col">
+						<?= anchor(
+							' admin_profile',
+							'<button class="btn btn-small btn-primary"
+		style=" margin-top:1.5%; width:100%; opacity:0.7;
 		background: linear-gradient(90.29deg, 
 		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);">
 		<i class="fas fa-key fa-sm"></i> Change Password</button>'
-					) ?>
-					<h3>
+						) ?>
+					</div>
 
+				</div>
 
 			</div>
 
 		</div>
-
-
-		<!-- 
-		<div class="profile-con container-fluid">
-			<div class="card mb-3" style="max-width: 650px; height:90%;">
-				<div class="row no-gutters">
-					<div class="con col-md-4 container-fluid">
-						<img src="<?= base_url('assets/images/profile/') . $admin['image'];
-									?>" class=" image responsive">
-					</div>
-					<div class="col-md-8">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
