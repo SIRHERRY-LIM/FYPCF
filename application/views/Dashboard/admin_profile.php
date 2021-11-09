@@ -196,7 +196,7 @@
 
 					<div class="col">
 						<?= anchor(
-							' admin_profile',
+							'Admin_Controller/admin_profile/change_password',
 							'<button class="btn btn-small btn-primary"
 		style=" margin-top:1.5%; width:100%; opacity:0.7;
 		background: linear-gradient(90.29deg, 

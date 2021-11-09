@@ -52,12 +52,7 @@ class admin_profile extends CI_Controller
 		$this->form_validation->set_rules('name', 'Full Name', 'required|trim');
 
 		if ($this->form_validation->run() == false) {
-			$this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Update unsuccessful please try again
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-                </div>');
+
 
 			$this->load->view('Dashboard/admin_edit_profile', $data);
 		} else {
@@ -100,6 +95,83 @@ class admin_profile extends CI_Controller
 			
 			');
 			redirect('Admin_Controller/admin_profile');
+		}
+	}
+
+	public function change_password()
+	{
+
+		$data['admin'] = $this->db->get_where(
+			'admin',
+			[
+
+				'admin_email' => $this->session->userdata('email'),
+
+
+			]
+		)->row_array();
+
+		$this->form_validation->set_rules(
+			'current_password',
+			'Current Password',
+			'required|trim'
+		);
+
+		$this->form_validation->set_rules(
+			'new_password',
+			'New Password',
+			'required|trim|min_length[8]|matches[new_password1]'
+		);
+
+		$this->form_validation->set_rules(
+			'new_password1',
+			'New Password1',
+			'required|trim|min_length[8]|matches[new_password]'
+		);
+
+		if ($this->form_validation->run() == false) {
+
+			$this->load->view('Dashboard/admin_change_password', $data);
+		} else {
+
+			$current_password = $this->input->post('current_password');
+			$new_password = $this->input->post('new_password');
+
+			if (!password_verify($current_password, $data['admin']['admin_password'])) {
+				$this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Wrong current password
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+			
+			');
+				redirect('Admin_Controller/admin_profile/change_password');
+			} else {
+				if ($current_password == $new_password) {
+					$this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                New password cannot be same as the current password
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>');
+					redirect('Admin_Controller/admin_profile/change_password');
+				} else {
+					$password_hash = password_hash($new_password, PASSWORD_DEFAULT);
+					$this->db->set('admin_password', $password_hash);
+					$this->db->where('admin_email', $this->session->userdata('email'));
+					$this->db->update('admin');
+
+					$this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                Password updated <strong> successfully</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>');
+
+					redirect('Admin_Controller/admin_profile/change_password');
+				}
+			}
 		}
 	}
 }
