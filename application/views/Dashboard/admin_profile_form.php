@@ -86,7 +86,7 @@
 				<span class="tooltip">Admin List</span>
 			</li>
 			<li>
-				<a href="#">
+				<a href="<?= base_url('Admin_Controller/lecturer_list') ?>">
 					<i class='bi bi-file-earmark-easel' style="color: white;"></i>
 					<span class="links_name">Lecturers Account</span>
 				</a>
@@ -94,7 +94,7 @@
 			</li>
 
 			<li>
-				<a href="#">
+				<a href="<?= base_url('hop') ?>">
 					<i class="fas fa-book-reader"></i>
 					<span class="links_name">Head of Program </span>
 				</a>

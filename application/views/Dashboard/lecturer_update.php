@@ -65,28 +65,26 @@
 				<span class="tooltip">Search</span>
 			</li>
 			<li>
-				<a href="Admin">
+				<a href="<?= base_url('Admin_Controller/Admin') ?>">
 					<i class='bx bx-grid-alt'></i>
 					<span class="links_name">Dashboard</span>
 				</a>
 				<span class="tooltip">Dashboard</span>
 			</li>
 			<li>
-				<a href="admin_profile">
+				<a href="<?= base_url('Admin_Controller/admin_profile') ?>">
 					<i class='bx bx-user'></i>
 					<span class="links_name">Profile</span>
 				</a>
 				<span class="tooltip">Profile</span>
 			</li>
-
 			<li>
-				<a href="Admin_list">
+				<a href="<?= base_url('Admin_Controller/Admin_list') ?>">
 					<i class='fas fa-list'></i>
 					<span class="links_name">Admin List</span>
 				</a>
 				<span class="tooltip">Admin List</span>
 			</li>
-
 			<li>
 				<a href="<?= base_url('Admin_Controller/lecturer_list') ?>">
 					<i class='bi bi-file-earmark-easel' style="color: white;"></i>
@@ -120,7 +118,7 @@
 				<span class="tooltip">Dean/Deputy Dean</span>
 			</li>
 			<li>
-				<a href="<?= base_url('Admin_Controller/batch') ?>">
+				<a href="#">
 					<i class='bx bx-folder'></i>
 					<span class="links_name">Folder</span>
 				</a>
@@ -153,41 +151,44 @@
 		</ul>
 	</div>
 	<section class="home-section">
-		<div class="text" style="margin-left: 6%;">Welcome Admin, <strong style="color:mediumslateblue;"> <?= $admin['admin_name']; ?></strong></div>
 
-		<div class="card-batch" style="width: 18rem; margin-left: 6%;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Current Batch</h5>
-				<p class="card-text">
-				<h3 style="text-align: center;"><strong>2021</strong></h3>
-				</p>
-				<p class="semester" style="text-align: center;">Semester 1
-				</p>
-			</div>
+
+		<div class="text" style="margin-left: 2%; margin-bottom: 3%;">
+			<h2>Update Lecturer Information</h2>
 		</div>
 
-		<div class="card-submission" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Complete Submission</h5>
-				<p class="card-text">
-				<h1 style="text-align: center;"><strong>70%</strong></h1>
-				</p>
-			</div>
+		<div class="admin-form container-fluid">
+			<?= $this->session->flashdata('message_lecturerupdate'); ?>
+			<form method="POST" action="<?= base_url('lecturer/update/' . $lecturer->lecturer_id); ?>">
+
+				<div class="form-group">
+					<input type="text" class="form-control" name="name" id="name" placeholder="Full Name" value="<?= $lecturer->lecturer_name; ?>" required>
+				</div>
+
+
+				<div class="form-group">
+					<input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<?= $lecturer->lecturer_email; ?>" readonly>
+				</div>
+
+				<select class="select_status" name="status" style="width: 100%; height: 38px;border-color:lightgray;border-radius:5px;" value="">
+					<option value="" disabled selected>Status <?php if ($lecturer->is_active == 1) {
+																	echo 'active';
+																} else {
+																	echo 'disable';
+																}
+																echo $lecturer->is_active; ?> </option>
+					<option value="1">Active</option>
+					<option value="0">Disabled</option>
+
+				</select>
+
+				<button type="submit" class="btn btn-primary" id="button">Register</button>
+			</form>
+
+
+
+
 		</div>
-
-		<div class="card-incomplete" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Incomplete Submission</h5>
-				<p class="card-text">
-				<h1 style="text-align: center;"><strong>30%</strong></h1>
-				</p>
-			</div>
-		</div>
-
-
-
-
-
 
 
 	</section>

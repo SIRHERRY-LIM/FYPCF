@@ -52,3 +52,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'welcomePage';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+
+
+//Lecturer Routes
+$route['lecturer'] = 'Admin_Controller/lecturer_list/index';
+$route['lecturer/add'] = 'Admin_Controller/lecturer_list/input';
+$route['lecturer/store'] = 'Admin_Controller/lecturer_list/store';
+$route['lecturer/add_form'] = 'Admin_Controller/lecturer_list/input';
+$route['lecturer/edit/(:any)'] = 'Admin_Controller/lecturer_list/edit/$1';
+$route['lecturer/update/(:any)'] = 'Admin_Controller/lecturer_list/update/$1';
+$route['lecturer/delete/(:any)'] = 'Admin_Controller/lecturer_list/delete/$1';
+
+// Head of Program Routes
+$route['hop'] = 'Admin_Controller/hop_list/index';

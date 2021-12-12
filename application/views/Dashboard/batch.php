@@ -153,37 +153,82 @@
 		</ul>
 	</div>
 	<section class="home-section">
-		<div class="text" style="margin-left: 6%;">Welcome Admin, <strong style="color:mediumslateblue;"> <?= $admin['admin_name']; ?></strong></div>
 
-		<div class="card-batch" style="width: 18rem; margin-left: 6%;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Current Batch</h5>
-				<p class="card-text">
-				<h3 style="text-align: center;"><strong>2021</strong></h3>
-				</p>
-				<p class="semester" style="text-align: center;">Semester 1
-				</p>
-			</div>
+		<div class="list-text" style=" text-align:center; margin-top:2%; margin-bottom:2% ">
+			<h3>Folder<?= anchor(
+							'Admin_Controller/batch/add_new_batch',
+							'<button class="btn btn-small btn-primary"
+		style="margin-left: 2%;
+		background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);">
+		<i class="fas fa-plus fa-sm"></i> Add New Batch</button>'
+						) ?>
+			</h3>
+
 		</div>
 
-		<div class="card-submission" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Complete Submission</h5>
-				<p class="card-text">
-				<h1 style="text-align: center;"><strong>70%</strong></h1>
-				</p>
-			</div>
-		</div>
+		<div class="admin-container container-fluid">
+			<div class="table-admin table-responsive text-nowrap">
+				<!--Table-->
+				<table class="table table-striped table-bordered table-hover table-sm">
 
-		<div class="card-incomplete" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Incomplete Submission</h5>
-				<p class="card-text">
-				<h1 style="text-align: center;"><strong>30%</strong></h1>
-				</p>
-			</div>
-		</div>
+					<!--Table head-->
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Year</th>
+							<th>Semester</th>
 
+							<th colspan="3">Action</th>
+						</tr>
+					</thead>
+					<!--Table head-->
+
+					<!--Table body-->
+					<tbody>
+						<?php $no = 1;
+
+						foreach ($batch as $b) : ?>
+
+							<tr>
+								<th scope="row"><?php echo $no++  ?></th>
+								<td><?php echo $b->year  ?></td>
+								<td><?php echo $b->semester ?></td>
+
+
+								<td width="20px"><?= anchor(
+														'Admin_Controller/',
+														'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+													) ?></td>
+
+								<td width="20px"><?= anchor(
+														'Admin_Controller/batch/edit',
+														'<div class="btn btn-small btn-primary"><i class="fa fa-pencil">
+								</i></div>'
+													) ?></td>
+
+								<td width="20px"><?= anchor(
+														'Admin_Controller/',
+														'<div class="btn btn-small btn-danger"><i class="fa fa-trash">
+								</i></div>'
+													) ?></td>
+
+							</tr>
+
+						<?php endforeach; ?>
+					</tbody>
+					<!--Table body-->
+
+
+				</table>
+				<!--Table-->
+			</div>
+
+		</div>
 
 
 

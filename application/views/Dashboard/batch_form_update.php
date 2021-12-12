@@ -65,28 +65,26 @@
 				<span class="tooltip">Search</span>
 			</li>
 			<li>
-				<a href="Admin">
+				<a href="<?= base_url('Admin_Controller/Admin') ?>">
 					<i class='bx bx-grid-alt'></i>
 					<span class="links_name">Dashboard</span>
 				</a>
 				<span class="tooltip">Dashboard</span>
 			</li>
 			<li>
-				<a href="admin_profile">
+				<a href="<?= base_url('Admin_Controller/admin_profile') ?>">
 					<i class='bx bx-user'></i>
 					<span class="links_name">Profile</span>
 				</a>
 				<span class="tooltip">Profile</span>
 			</li>
-
 			<li>
-				<a href="Admin_list">
+				<a href="<?= base_url('Admin_Controller/Admin_list') ?>">
 					<i class='fas fa-list'></i>
 					<span class="links_name">Admin List</span>
 				</a>
 				<span class="tooltip">Admin List</span>
 			</li>
-
 			<li>
 				<a href="<?= base_url('Admin_Controller/lecturer_list') ?>">
 					<i class='bi bi-file-earmark-easel' style="color: white;"></i>
@@ -120,7 +118,7 @@
 				<span class="tooltip">Dean/Deputy Dean</span>
 			</li>
 			<li>
-				<a href="<?= base_url('Admin_Controller/batch') ?>">
+				<a href="#">
 					<i class='bx bx-folder'></i>
 					<span class="links_name">Folder</span>
 				</a>
@@ -153,42 +151,39 @@
 		</ul>
 	</div>
 	<section class="home-section">
-		<div class="text" style="margin-left: 6%;">Welcome Admin, <strong style="color:mediumslateblue;"> <?= $admin['admin_name']; ?></strong></div>
 
-		<div class="card-batch" style="width: 18rem; margin-left: 6%;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Current Batch</h5>
-				<p class="card-text">
-				<h3 style="text-align: center;"><strong>2021</strong></h3>
-				</p>
-				<p class="semester" style="text-align: center;">Semester 1
-				</p>
-			</div>
+
+
+		<div class="text" style="margin-left: 2.5%; margin-bottom: 3%;">
+			<h2>Update Batch</h2>
 		</div>
+		<?= $this->session->flashdata('message_add_batch'); ?>
 
-		<div class="card-submission" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Complete Submission</h5>
-				<p class="card-text">
-				<h1 style="text-align: center;"><strong>70%</strong></h1>
-				</p>
-			</div>
+		<div class="admin-form container-fluid">
+
+			<form method="POST" action="<?= base_url('Admin_Controller/batch/batch_update' . $batch->id_batch); ?>">
+
+				<div class="form-group">
+
+					<!-- <input type="hidden" class="form-control" name="id" id="id" value="<?php $b->id_batch ?>"> -->
+
+					<input type="text" class="form-control" name="Year" id="Year" placeholder="Year" required value="<?php $batch->year ?>">
+				</div>
+
+
+				<div class="form-group">
+					<select class="form-control" required name="Semester">
+						<option selected value="" disabled><?= $batch->semester; ?></option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+					</select>
+				</div>
+
+				<button type="submit" class="btn btn-primary" id="button">Update Batch</button>
+			</form>
+
+
 		</div>
-
-		<div class="card-incomplete" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Incomplete Submission</h5>
-				<p class="card-text">
-				<h1 style="text-align: center;"><strong>30%</strong></h1>
-				</p>
-			</div>
-		</div>
-
-
-
-
-
-
 
 	</section>
 	<script>

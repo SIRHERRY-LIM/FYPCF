@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/admin_dashboard.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/Admin_dash_homesection.css">
+	<!-- <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/sidebar_profile.css"> -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 	<!-- FontAwesome CSS -->
@@ -78,7 +79,6 @@
 				</a>
 				<span class="tooltip">Profile</span>
 			</li>
-
 			<li>
 				<a href="Admin_list">
 					<i class='fas fa-list'></i>
@@ -86,9 +86,8 @@
 				</a>
 				<span class="tooltip">Admin List</span>
 			</li>
-
 			<li>
-				<a href="<?= base_url('Admin_Controller/lecturer_list') ?>">
+				<a href=" ">
 					<i class='bi bi-file-earmark-easel' style="color: white;"></i>
 					<span class="links_name">Lecturers Account</span>
 				</a>
@@ -120,7 +119,7 @@
 				<span class="tooltip">Dean/Deputy Dean</span>
 			</li>
 			<li>
-				<a href="<?= base_url('Admin_Controller/batch') ?>">
+				<a href="#">
 					<i class='bx bx-folder'></i>
 					<span class="links_name">Folder</span>
 				</a>
@@ -153,35 +152,99 @@
 		</ul>
 	</div>
 	<section class="home-section">
-		<div class="text" style="margin-left: 6%;">Welcome Admin, <strong style="color:mediumslateblue;"> <?= $admin['admin_name']; ?></strong></div>
 
-		<div class="card-batch" style="width: 18rem; margin-left: 6%;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Current Batch</h5>
-				<p class="card-text">
-				<h3 style="text-align: center;"><strong>2021</strong></h3>
-				</p>
-				<p class="semester" style="text-align: center;">Semester 1
-				</p>
-			</div>
+
+
+		<div class="list-text" style=" text-align:center; margin-top:2%; margin-bottom:2% ">
+			<h3>List of Head of Program<?= anchor(
+											'lecturer/add_form',
+											'<button class="btn btn-small btn-primary"
+		style="margin-left: 2%;
+		background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);">
+		<i class="fas fa-plus fa-sm"></i> Add HOP</button>'
+										) ?>
+			</h3>
+
 		</div>
 
-		<div class="card-submission" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Complete Submission</h5>
-				<p class="card-text">
-				<h1 style="text-align: center;"><strong>70%</strong></h1>
-				</p>
-			</div>
-		</div>
+		<?= $this->session->flashdata('message_lectureradd'); ?>
+		<?= $this->session->flashdata('message_lecturerdelete'); ?>
 
-		<div class="card-incomplete" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Incomplete Submission</h5>
-				<p class="card-text">
-				<h1 style="text-align: center;"><strong>30%</strong></h1>
-				</p>
+		<div class="admin-container container-fluid">
+			<div class="table-admin table-responsive text-nowrap">
+				<!--Table-->
+				<table class="table table-striped table-bordered table-hover table-sm">
+
+					<!--Table head-->
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Status</th>
+							<th>Date Created</th>
+							<th colspan="3">Action</th>
+						</tr>
+					</thead>
+					<!--Table head-->
+
+					<!--Table body-->
+					<tbody>
+						<?php $no = 1;
+
+						foreach ($lecturer as $l) : ?>
+
+							<tr>
+								<th scope="row"><?php echo $no++  ?></th>
+								<td><?php echo $l->lecturer_name  ?></td>
+								<td><?php echo $l->lecturer_email  ?></td>
+								<td><?php
+									if (($l->is_active) == 1) {
+										echo 'active';
+									} else {
+										echo 'disable';
+									}
+									echo $l->is_active ?></td>
+								<td><?php echo $l->date_created ?></td>
+
+								<!-- <td width="20px"><?= anchor(
+															'Admin_Controller/',
+															'<div class="btn btn-small btn-info"><i class="fa fa-eye">
+								</i></div>'
+														) ?></td> -->
+
+								<td width="20px">
+									<a href="<?= base_url('lecturer/edit/' . $l->lecturer_id) ?>">
+										<div class="btn btn-small btn-primary"><i class="fa fa-pencil">
+											</i>
+										</div>
+									</a>
+								</td>
+
+								<td width="20px">
+
+									<a href="<?= base_url('lecturer/delete/' . $l->lecturer_id) ?>">
+										<div class="btn btn-small btn-danger"><i class="fa fa-trash">
+											</i>
+										</div>
+									</a>
+								</td>
+
+								<!-- <td>
+									<button type="button" class="btn btn-danger confirm-delete" value="<?= $l->lecturer_id ?>">Confirm Delete</button>
+								</td> -->
+							</tr>
+
+						<?php endforeach; ?>
+					</tbody>
+					<!--Table body-->
+
+
+				</table>
+				<!--Table-->
 			</div>
+
 		</div>
 
 
