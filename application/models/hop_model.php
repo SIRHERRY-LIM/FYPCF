@@ -3,9 +3,9 @@
 class hop_model extends CI_Model
 {
 
-	public function insertLecturer($data)
+	public function insertHOP($data)
 	{
-		return	$this->db->insert('lecturer', $data);
+		return	$this->db->insert('hop', $data);
 	}
 
 	public function getHOP()
@@ -14,19 +14,19 @@ class hop_model extends CI_Model
 		return $query->result();
 	}
 
-	public function editLecturer($lecturer_id)
+	public function editHOP($hop_id)
 	{
-		$query = $this->db->get_where('lecturer', ['lecturer_id' => $lecturer_id]);
+		$query = $this->db->get_where('hop', ['hop_id' => $hop_id]);
 		return $query->row();
 	}
 
-	public function updateLecturer($data, $lecturer_id)
+	public function updateHOP($data, $hop_id)
 	{
-		return $this->db->update('lecturer', $data, ['lecturer_id' => $lecturer_id]);
+		return $this->db->update('hop', $data, ['hop_id' => $hop_id]);
 	}
 
-	public function deleteLecturer($lecturer_id)
+	public function deleteHOP($hop_id)
 	{
-		return $this->db->delete('lecturer', ['lecturer_id' => $lecturer_id]);
+		return $this->db->delete('hop', ['hop_id' => $hop_id]);
 	}
 }

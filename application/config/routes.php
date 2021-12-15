@@ -66,3 +66,8 @@ $route['lecturer/delete/(:any)'] = 'Admin_Controller/lecturer_list/delete/$1';
 
 // Head of Program Routes
 $route['hop'] = 'Admin_Controller/hop_list/index';
+$route['hop/add'] = 'Admin_Controller/hop_list/input';
+$route['hop/store'] = 'Admin_Controller/hop_list/store';
+$route['hop/edit/(:any)'] = 'Admin_Controller/hop_list/edit/$1';
+$route['hop/update/(:any)'] = 'Admin_Controller/hop_list/update/$1';
+$route['hop/delete/(:any)'] = 'Admin_Controller/hop_list/delete/$1';

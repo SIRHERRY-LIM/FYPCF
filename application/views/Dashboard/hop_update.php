@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/admin_dashboard.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/Admin_dash_homesection.css">
-	<!-- <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/sidebar_profile.css"> -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 	<!-- FontAwesome CSS -->
@@ -66,28 +65,28 @@
 				<span class="tooltip">Search</span>
 			</li>
 			<li>
-				<a href="Admin">
+				<a href="<?= base_url('Admin_Controller/Admin') ?>">
 					<i class='bx bx-grid-alt'></i>
 					<span class="links_name">Dashboard</span>
 				</a>
 				<span class="tooltip">Dashboard</span>
 			</li>
 			<li>
-				<a href="admin_profile">
+				<a href="<?= base_url('Admin_Controller/admin_profile') ?>">
 					<i class='bx bx-user'></i>
 					<span class="links_name">Profile</span>
 				</a>
 				<span class="tooltip">Profile</span>
 			</li>
 			<li>
-				<a href="Admin_list">
+				<a href="<?= base_url('Admin_Controller/Admin_list') ?>">
 					<i class='fas fa-list'></i>
 					<span class="links_name">Admin List</span>
 				</a>
 				<span class="tooltip">Admin List</span>
 			</li>
 			<li>
-				<a href=" ">
+				<a href="<?= base_url('Admin_Controller/lecturer_list') ?>">
 					<i class='bi bi-file-earmark-easel' style="color: white;"></i>
 					<span class="links_name">Lecturers Account</span>
 				</a>
@@ -154,102 +153,42 @@
 	<section class="home-section">
 
 
-
-		<div class="list-text" style=" text-align:center; margin-top:2%; margin-bottom:2% ">
-			<h3>List of Head of Program<?= anchor(
-											'hop/add',
-											'<button class="btn btn-small btn-primary"
-		style="margin-left: 2%;
-		background: linear-gradient(90.29deg, 
-		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);">
-		<i class="fas fa-plus fa-sm"></i> Add HOP</button>'
-										) ?>
-			</h3>
-
+		<div class="text" style="margin-left: 2%; margin-bottom: 3%;">
+			<h2>Update Head of Program Information</h2>
 		</div>
 
-		<?= $this->session->flashdata('message_hopadd'); ?>
-		<?= $this->session->flashdata('message_lecturerdelete'); ?>
-		<?= $this->session->flashdata('message_hopupdate'); ?>
-		<?= $this->session->flashdata('message_hopdelete'); ?>
-		<div class="admin-container container-fluid">
-			<div class="table-admin table-responsive text-nowrap">
-				<!--Table-->
-				<table class="table table-striped table-bordered table-hover table-sm">
+		<div class="admin-form container-fluid">
+			<?= $this->session->flashdata('message_hopupdate'); ?>
+			<form method="POST" action="<?= base_url('hop/update/' . $hop->hop_id); ?>">
 
-					<!--Table head-->
-					<thead>
-						<tr>
-							<th>No</th>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Status</th>
-							<th>Date Created</th>
-							<th colspan="3">Action</th>
-						</tr>
-					</thead>
-					<!--Table head-->
-
-					<!--Table body-->
-					<tbody>
-						<?php $no = 1;
-
-						foreach ($hop as $h) : ?>
-
-							<tr>
-								<th scope="row"><?php echo $no++  ?></th>
-								<td><?php echo $h->hop_name  ?></td>
-								<td><?php echo $h->hop_email  ?></td>
-								<td><?php
-									if (($h->is_active) == 1) {
-										echo 'active';
-									} else {
-										echo 'disable';
-									}
-									echo $h->is_active ?></td>
-								<td><?php echo $h->date_created ?></td>
-
-								<!-- <td width="20px"><?= anchor(
-															'Admin_Controller/',
-															'<div class="btn btn-small btn-info"><i class="fa fa-eye">
-								</i></div>'
-														) ?></td> -->
-
-								<td width="20px">
-									<a href="<?= base_url('hop/edit/' . $h->hop_id) ?>">
-										<div class="btn btn-small btn-primary"><i class="fa fa-pencil">
-											</i>
-										</div>
-									</a>
-								</td>
-
-								<td width="20px">
-
-									<a href="<?= base_url('hop/delete/' . $h->hop_id) ?>">
-										<div class="btn btn-small btn-danger"><i class="fa fa-trash">
-											</i>
-										</div>
-									</a>
-								</td>
+				<div class="form-group">
+					<input type="text" class="form-control" name="name" id="name" placeholder="Full Name" value="<?= $hop->hop_name; ?>" required>
+				</div>
 
 
-							</tr>
+				<div class="form-group">
+					<input type="email" class="form-control" name="email" id="email" placeholder="Email" value="<?= $hop->hop_email; ?>" readonly>
+				</div>
 
-						<?php endforeach; ?>
-					</tbody>
-					<!--Table body-->
+				<select class="select_status" name="status" style="width: 100%; height: 38px;border-color:lightgray;border-radius:5px;" value="">
+					<option value="" disabled selected>Status <?php if ($hop->is_active == 1) {
+																	echo 'active';
+																} else {
+																	echo 'disable';
+																}
+																echo $hop->is_active; ?> </option>
+					<option value="1">Active</option>
+					<option value="0">Disabled</option>
+
+				</select>
+
+				<button type="submit" class="btn btn-primary" id="button">Update</button>
+			</form>
 
 
-				</table>
-				<!--Table-->
-			</div>
+
 
 		</div>
-
-
-
-
-
 
 
 	</section>

@@ -18,14 +18,14 @@ class hop_list extends CI_Controller
 
 	public function input()
 	{
-		$this->load->view('Dashboard/add_lecturer_form');
+		$this->load->view('Dashboard/add_hop_form');
 	}
 
 	public function store()
 	{
 
 		$this->form_validation->set_rules('name', 'Name', 'required|trim');
-		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[admin.admin_email]');
+		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[hop.hop_email]');
 		$this->form_validation->set_rules(
 			'password',
 			'Password',
@@ -39,76 +39,76 @@ class hop_list extends CI_Controller
 
 		if ($this->form_validation->run()) {
 			$data = [
-				'lecturer_name' => htmlspecialchars($this->input->post('name', true)),
+				'hop_name' => htmlspecialchars($this->input->post('name', true)),
 				'image' => 'default.png',
-				'lecturer_email' => htmlspecialchars($this->input->post('email', true)),
-				'lecturer_password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+				'hop_email' => htmlspecialchars($this->input->post('email', true)),
+				'hop_password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
 				'is_active' => 1,
 				'date_created' => date(DATE_ATOM)
 			];
 
-			$this->load->model('lecturer_model');
-			$this->lecturer_model->insertLecturer($data);
+			$this->load->model('hop_model');
+			$this->hop_model->insertHOP($data);
 
-			$this->session->set_flashdata('message_lectureradd', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Congratulation!</strong>  Lecturer account has successfully created
+			$this->session->set_flashdata('message_hopadd', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Congratulation!</strong>  HOP account has successfully created
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
 			
 			');
-			redirect(base_url('lecturer'));
+			redirect(base_url('hop'));
 		} else {
-			$this->session->set_flashdata('message_lectureradd', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Lecturer information is invalid
+			$this->session->set_flashdata('message_hopadd', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                HOP information is invalid
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
 			
 			');
-			redirect(base_url('lecturer/add_form'));
+			redirect(base_url('hop/add'));
 		}
 	}
 
 
-	public function edit($lecturer_id)
+	public function edit($hop_id)
 	{
-		$this->load->model('lecturer_model');
-		$data['lecturer'] = $this->lecturer_model->editLecturer($lecturer_id);
-		$this->load->view('Dashboard/lecturer_update', $data);
+		$this->load->model('hop_model');
+		$data['hop'] = $this->hop_model->editHOP($hop_id);
+		$this->load->view('Dashboard/hop_update', $data);
 	}
 
-	public function update($lecturer_id)
+	public function update($hop_id)
 	{
 		$this->form_validation->set_rules('name', 'Name', 'required|trim');
-		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[admin.admin_email]');
+		// $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[hop.hop_email]');
 
 		if ($this->form_validation->run()) {
 			$data = [
-				'lecturer_name' => htmlspecialchars($this->input->post('name', true)),
+				'hop_name' => htmlspecialchars($this->input->post('name', true)),
 
-				'lecturer_email' => htmlspecialchars($this->input->post('email', true)),
+				'hop_email' => htmlspecialchars($this->input->post('email', true)),
 
 				'is_active' => $this->input->post('status')
 
 			];
-			$this->load->model('lecturer_model');
-			$this->lecturer_model->updateLecturer($data, $lecturer_id);
+			$this->load->model('hop_model');
+			$this->hop_model->updateHOP($data, $hop_id);
 
-			$this->session->set_flashdata('message_lecturerupdate', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Congratulation!</strong>  Lecturer account has successfully update
+			$this->session->set_flashdata('message_hopupdate', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Congratulation!</strong>  HOP account has successfully update
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
 			
 			');
-			redirect(base_url('lecturer/edit/' . $lecturer_id));
+			redirect(base_url('hop'));
 		} else {
-			$this->session->set_flashdata('message_lecturerupdate', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Lecturer update is unsuccessful 
+			$this->session->set_flashdata('message_hopupdate', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                HOP update is unsuccessful 
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -116,21 +116,22 @@ class hop_list extends CI_Controller
 			
 			');
 
-			redirect(base_url('lecturer/edit'));
+
+			redirect(base_url('hop/edit/' . $hop_id));
 		}
 	}
 
-	public function delete($lecturer_id)
+	public function delete($hop_id)
 	{
-		$this->load->model('lecturer_model');
-		$this->lecturer_model->deleteLecturer($lecturer_id);
-		$this->session->set_flashdata('message_lecturerdelete', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Lecturer account is deleted
+		$this->load->model('hop_model');
+		$this->hop_model->deleteHOP($hop_id);
+		$this->session->set_flashdata('message_hopdelete', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            HOP account is deleted
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
                 </div>');
 
-		redirect(base_url('lecturer'));
+		redirect(base_url('hop'));
 	}
 }
