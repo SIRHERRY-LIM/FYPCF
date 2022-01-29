@@ -71,3 +71,11 @@ $route['hop/store'] = 'Admin_Controller/hop_list/store';
 $route['hop/edit/(:any)'] = 'Admin_Controller/hop_list/edit/$1';
 $route['hop/update/(:any)'] = 'Admin_Controller/hop_list/update/$1';
 $route['hop/delete/(:any)'] = 'Admin_Controller/hop_list/delete/$1';
+
+//The Quality Panel Routes
+$route['qualityPanel'] = 'Admin_Controller/qualityPanel_list/index';
+$route['qualityPanel/add'] = 'Admin_Controller/qualityPanel_list/input';
+$route['qualityPanel/store'] = 'Admin_Controller/qualityPanel_list/store';
+$route['qualityPanel/edit/(:any)'] = 'Admin_Controller/qualityPanel_list/edit/$1';
+$route['qualityPanel/update/(:any)'] = 'Admin_Controller/qualityPanel_list/update/$1';
+$route['qualityPanel/delete/(:any)'] = 'Admin_Controller/qualityPanel_list/delete/$1';
