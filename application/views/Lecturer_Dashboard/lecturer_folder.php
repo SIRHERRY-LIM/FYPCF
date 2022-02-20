@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/admin_dashboard.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/Admin_dash_homesection.css">
-	<!-- <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/sidebar_profile.css"> -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 	<!-- FontAwesome CSS -->
@@ -30,14 +29,14 @@
 	<link href="<?php echo base_url() ?>assets/css/v4-shims.min.css" rel="stylesheet" type="text/css">
 
 
-	<title>Admin Dashboard</title>
+	<title>Lecturer Dashboard</title>
 	<link rel=" icon" href="<?php echo base_url() ?>assets/images/FCILogo.png">
 	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 
 <body>
-	<div class="sidebar">
+	<div class="sidebar" style="height: 100%;">
 
 		<div class="logo-details">
 			<i class="logo-icon" id="logo_icon" style="transition: all 0.5s ease;">
@@ -54,7 +53,7 @@
 				</svg>
 
 			</i>
-			<div class="logo_name">Admin Dashboad</div>
+			<div class="logo_name">Lecturer Dashboad</div>
 			<i class='bx bx-menu' id="btn"></i>
 		</div>
 
@@ -66,65 +65,30 @@
 				<span class="tooltip">Search</span>
 			</li>
 			<li>
-				<a href="<?= base_url('dashboard') ?>">
+				<a href="#">
 					<i class='bx bx-grid-alt'></i>
 					<span class="links_name">Dashboard</span>
 				</a>
 				<span class="tooltip">Dashboard</span>
 			</li>
+
 			<li>
-				<a href="admin_profile">
+				<a href="#">
 					<i class='bx bx-user'></i>
 					<span class="links_name">Profile</span>
 				</a>
 				<span class="tooltip">Profile</span>
 			</li>
-			<li>
-				<a href="admin_list">
-					<i class='fas fa-list'></i>
-					<span class="links_name">Admin List</span>
-				</a>
-				<span class="tooltip">Admin List</span>
-			</li>
-			<li>
-				<a href="lecturer_list">
-					<i class='bi bi-file-earmark-easel' style="color: white;"></i>
-					<span class="links_name">Lecturers Account</span>
-				</a>
-				<span class="tooltip">Lecturers Account</span>
-			</li>
-
-			<li>
-				<a href="<?= base_url('hop') ?>">
-					<i class="fas fa-book-reader"></i>
-					<span class="links_name">Head of Program </span>
-				</a>
-				<span class="tooltip">Head of Program</span>
-			</li>
-
-			<li>
-				<a href="quality_panel_list">
-					<i class="fas fa-medal"></i>
-					<span class="links_name">Quality Panel</span>
-				</a>
-				<span class="tooltip">Quality Panel</span>
-			</li>
 
 
 			<li>
 				<a href="#">
-					<i class="fas fa-university"></i>
-					<span class="links_name">Dean/Deputy Dean</span>
-				</a>
-				<span class="tooltip">Dean/Deputy Dean</span>
-			</li>
-			<li>
-				<a href="folder">
 					<i class='bx bx-folder'></i>
 					<span class="links_name">Folder</span>
 				</a>
 				<span class="tooltip">Folder</span>
 			</li>
+
 			<li>
 				<a href="#">
 					<i class='bx bx-calendar'></i>
@@ -140,7 +104,7 @@
 				<span class="tooltip">Messages</span>
 			</li>
 
-			<a href="Admin/logout">
+			<a href="<?= base_url('lecturer/logout') ?>">
 				<li class="profile">
 					<div class=" profile-details">
 						<div class="name">Log Out</div>
@@ -152,26 +116,8 @@
 		</ul>
 	</div>
 	<section class="home-section">
+		<div class="text" style="margin-left: 6%;">Subject Folder</div>
 
-
-
-		<div class="list-text" style=" text-align:center; margin-top:2%; margin-bottom:2% ">
-			<h3>List of Head of Program<?= anchor(
-											'hop/add',
-											'<button class="btn btn-small btn-primary"
-		style="margin-left: 2%;
-		background: linear-gradient(90.29deg, 
-		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);">
-		<i class="fas fa-plus fa-sm"></i> Add HOP</button>'
-										) ?>
-			</h3>
-
-		</div>
-
-		<?= $this->session->flashdata('message_hopadd'); ?>
-		<?= $this->session->flashdata('message_lecturerdelete'); ?>
-		<?= $this->session->flashdata('message_hopupdate'); ?>
-		<?= $this->session->flashdata('message_hopdelete'); ?>
 		<div class="admin-container container-fluid">
 			<div class="table-admin table-responsive text-nowrap">
 				<!--Table-->
@@ -180,74 +126,84 @@
 					<!--Table head-->
 					<thead>
 						<tr>
-							<th>No</th>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Status</th>
-							<th>Date Created</th>
-							<th colspan="3">Action</th>
+							<th style="text-align: center;">Subject Code</th>
+							<th style="text-align: center;">Subject Name</th>
+							<th colspan="1" style="text-align: center;">Folder</th>
+							<th style="text-align: center;">Completion Status</th>
 						</tr>
 					</thead>
 					<!--Table head-->
+					<tr>
+						<td>KP00XXX</td>
+						<td>Network Fundamental</td>
+						<td width="20px"><?= anchor(
+												'subject/Network_Security',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+						<td>Completed</td>
+					</tr>
 
+					<tr>
+						<td>KP01XXX</td>
+						<td>Network Security</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+						<td>Completed</td>
+					</tr>
+
+					<tr>
+						<td>KP02XXX</td>
+						<td>Network WAN</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+						<td>Completed</td>
+					</tr>
+
+					<tr>
+						<td>KP03XXX</td>
+						<td>Web Development</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+						<td>Completed</td>
+					</tr>
+
+					<tr>
+						<td>KP04XXX</td>
+						<td>Crytopgraphy</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+						<td>Completed</td>
+					</tr>
 					<!--Table body-->
 					<tbody>
-						<?php $no = 1;
-
-						foreach ($hop as $h) : ?>
-
-							<tr>
-								<th scope="row"><?php echo $no++  ?></th>
-								<td><?php echo $h->hop_name  ?></td>
-								<td><?php echo $h->hop_email  ?></td>
-								<td><?php
-									if (($h->is_active) == 1) {
-										echo 'active';
-									} else {
-										echo 'disable';
-									}
-									echo $h->is_active ?></td>
-								<td><?php echo $h->date_created ?></td>
-
-								<!-- <td width="20px"><?= anchor(
-															'Admin_Controller/',
-															'<div class="btn btn-small btn-info"><i class="fa fa-eye">
-								</i></div>'
-														) ?></td> -->
-
-								<td width="20px">
-									<a href="<?= base_url('hop/edit/' . $h->hop_id) ?>">
-										<div class="btn btn-small btn-primary"><i class="fa fa-pencil">
-											</i>
-										</div>
-									</a>
-								</td>
-
-								<td width="20px">
-
-									<a href="<?= base_url('hop/delete/' . $h->hop_id) ?>">
-										<div class="btn btn-small btn-danger"><i class="fa fa-trash">
-											</i>
-										</div>
-									</a>
-								</td>
-
-
-							</tr>
-
-						<?php endforeach; ?>
-					</tbody>
-					<!--Table body-->
-
-
-				</table>
-				<!--Table-->
-			</div>
-
-		</div>
-
-
-
 
 
 

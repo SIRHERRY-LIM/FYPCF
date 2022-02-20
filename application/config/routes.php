@@ -54,6 +54,17 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
+//Sidebar Routes
+$route['dashboard'] = 'Admin_Controller/Admin/index';
+$route['admin_profile'] = 'Admin_Controller/admin_profile/index';
+$route['admin_list'] = 'Admin_Controller/Admin_list/index';
+$route['lecturer_list'] = 'Admin_Controller/lecturer_list/index';
+$route['hop_list'] = 'Admin_Controller/hop_list/index';
+$route['quality_panel_list'] = 'Admin_Controller/qualityPanel_list/qualitypanelview';
+$route['folder'] = 'Admin_Controller/batch/index';
+$route['subject_folder'] = 'Admin_Controller/folder/index';
+
+
 
 //Lecturer Routes
 $route['lecturer'] = 'Admin_Controller/lecturer_list/index';
@@ -79,3 +90,26 @@ $route['qualityPanel/store'] = 'Admin_Controller/qualityPanel_list/store';
 $route['qualityPanel/edit/(:any)'] = 'Admin_Controller/qualityPanel_list/edit/$1';
 $route['qualityPanel/update/(:any)'] = 'Admin_Controller/qualityPanel_list/update/$1';
 $route['qualityPanel/delete/(:any)'] = 'Admin_Controller/qualityPanel_list/delete/$1';
+
+//The Batch Routes
+$route['batch'] = 'Admin_Controller/batch/index';
+$route['batch/add'] = 'Admin_Controller/batch/input';
+
+
+//The Folder Routes
+$route['folder'] = 'Admin_Controller/folder/index';
+$route['folder/add_subject'] = 'Admin_Controller/folder/add_new_subject';
+
+
+/*// Route for Lecturer // */
+
+//Lecturer Login Routes
+$route['lecturer/login'] = 'Login/lecturer_login';
+$route['lecturer/dashboard'] = 'Lecturer_Controller/lecturer';
+$route['lecturer/logout'] = 'Lecturer_Controller/lecturer/logout';
+$route['lecturer/folder'] = 'Lecturer_Controller/lecturer_folder';
+
+//Subject Routes
+$route['subject/Network_Security'] = 'Lecturer_Controller/lecturer_subject/Network_Security';
+$route['Net_Sec/CSI'] = 'Lecturer_Controller/lecturer_subject/Net_Sec_CSI';
+$route['Net_Sec/CSI/upload'] = 'Lecturer_Controller/lecturer_subject/Net_Sec_CSI_upload';

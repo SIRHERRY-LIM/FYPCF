@@ -134,5 +134,5 @@ $autoload['language'] = array();
 */
 $autoload['model'] = array(
 	'admin_profile_model', 'lecturer_model', 'batch_model',
-	'hop_model'
+	'hop_model', 'net_sec_csi_model'
 );

@@ -9,6 +9,12 @@ class qualityPanel_list extends CI_Controller
 		$this->load->library('form_validation');
 	}
 
+	public function qualitypanelview()
+	{
+
+		$this->load->view('Dashboard/qualitypanel_list');
+	}
+
 	public function index()
 	{
 		$this->load->model('qualityPanel_model');

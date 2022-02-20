@@ -96,7 +96,7 @@
 			</li>
 
 			<li>
-				<a href="<?= base_url('hop') ?>">
+				<a href="hop_list">
 					<i class="fas fa-book-reader"></i>
 					<span class="links_name">Head of Program </span>
 				</a>
@@ -197,7 +197,7 @@
 
 
 								<td width="20px"><?= anchor(
-														'Admin_Controller/',
+														'subject_folder',
 														'<div class="btn btn-small btn-info"
 														style="background: linear-gradient(90.29deg, 
 		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"

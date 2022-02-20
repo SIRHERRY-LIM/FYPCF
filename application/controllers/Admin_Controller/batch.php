@@ -19,8 +19,6 @@ class batch extends CI_Controller
 
 	public function add_new_batch()
 	{
-
-
 		$this->load->view('Dashboard/batch_form');
 	}
 

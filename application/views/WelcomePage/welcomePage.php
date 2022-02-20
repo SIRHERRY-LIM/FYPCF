@@ -63,10 +63,12 @@
 			<button type="button" class="btn btn-primary btn-lg" id="button-hp">
 				Head of Program
 			</button>
-			<button type="button" class="btn btn-primary btn-lg" id="button-lecturer">
-				Lecturer
-			</button>
 
+			<a href="lecturer/login">
+				<button type="button" class="btn btn-primary btn-lg" id="button-lecturer">
+					Lecturer
+				</button>
+			</a>
 		</div>
 
 	</div>
