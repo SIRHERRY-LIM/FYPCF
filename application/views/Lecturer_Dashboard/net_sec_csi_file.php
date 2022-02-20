@@ -36,7 +36,7 @@
 
 
 <body>
-	<div class="sidebar" style="height: 100%;">
+	<div class="sidebar" style="height: 200vh; ">
 
 		<div class="logo-details">
 			<i class="logo-icon" id="logo_icon" style="transition: all 0.5s ease;">
@@ -116,7 +116,7 @@
 		</ul>
 	</div>
 	<section class="home-section">
-		<div class="text" style="margin-left: 6%;">Course Specific Information</div>
+		<div class="text" style="margin-left: 6%;">Course Specific Information Upload</div>
 
 
 		<div class="admin-container container-fluid">
@@ -127,18 +127,22 @@
 					<!--Table head-->
 					<thead>
 						<tr>
-							<th style="text-align: center;">No</th>
+							<th style="text-align: center;">No / Filename</th>
 							<th style="text-align: center;">File</th>
 							<th colspan="1" style="text-align: center;">Upload Date</th>
 						</tr>
 					</thead>
 					<!--Table head-->
 					<?php $no = 1;
-					foreach ($var as $key => $value) : ?>
+					foreach ($csi as $c) : ?>
 						<tr>
-							<td><?= $no++ ?></td>
-							<td></td>
-							<td></td>
+							<td><?= $no++ ?> <?= $c->file ?></td>
+							<td>
+								<iframe src="<?= base_url('assets/FileSubject/Net_Sec/') . $c->file  ?>  " style=" width: 100%;height: 100vh;margin-buttom:20%; border:none">
+								</iframe>
+
+							</td>
+							<td><?= $c->upload_date ?></td>
 						</tr>
 					<?php endforeach; ?>
 

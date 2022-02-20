@@ -5,4 +5,14 @@ class net_sec_csi_model extends CI_Model
 	{
 		return $this->db->get('net_sec_csi');
 	}
+
+	public function insert_csi_file($name)
+	{
+		$data = array(
+			'file' => $name,
+			'upload_date' => date(DATE_ATOM)
+		);
+
+		return $this->db->insert('net_sec_csi', $data);
+	}
 }

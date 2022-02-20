@@ -128,13 +128,15 @@
 						<tr>
 							<th style="text-align: center;">Types of
 								Folder</th>
-							<th colspan="1" style="text-align: center;">Folder</th>
 							<th style="text-align: center;">Completion Status</th>
+							<th style="text-align: center;">Folder</th>
+
 						</tr>
 					</thead>
 					<!--Table head-->
 					<tr>
 						<td>Course Specific Information</td>
+						<td>Completed</td>
 						<td width="20px"><?= anchor(
 												'Net_Sec/CSI',
 												'<div class="btn btn-small btn-info"
@@ -143,11 +145,24 @@
 														><i class="fa fa-folder-open">
 								</i></div>'
 											) ?></td>
-						<td>Completed</td>
+
+						<td width="20px"><?= anchor(
+												'Net_Sec/CSI/view',
+												'<div class="btn btn-small btn-info"
+														style="background-color: #045de9;
+background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);"
+														><i class ="fa fa-info">
+								</i></div>'
+											) ?></td>
+
+
+
+
 					</tr>
 
 					<tr>
 						<td>Students List & Student Attendance Analysis</td>
+						<td>Completed</td>
 						<td width="20px"><?= anchor(
 												'subject_folder',
 												'<div class="btn btn-small btn-info"
@@ -156,11 +171,12 @@
 														><i class="fa fa-folder-open">
 								</i></div>'
 											) ?></td>
-						<td>Completed</td>
+
 					</tr>
 
 					<tr>
 						<td> List of Assessments</td>
+						<td>Completed</td>
 						<td width="20px"><?= anchor(
 												'subject_folder',
 												'<div class="btn btn-small btn-info"
@@ -169,11 +185,12 @@
 														><i class="fa fa-folder-open">
 								</i></div>'
 											) ?></td>
-						<td>Completed</td>
+
 					</tr>
 
 					<tr>
 						<td>Students Performance – Mark & Grade</td>
+						<td>Completed</td>
 						<td width="20px"><?= anchor(
 												'subject_folder',
 												'<div class="btn btn-small btn-info"
@@ -182,11 +199,11 @@
 														><i class="fa fa-folder-open">
 								</i></div>'
 											) ?></td>
-						<td>Completed</td>
 					</tr>
 
 					<tr>
 						<td>Students Feedback</td>
+						<td>Completed</td>
 						<td width="20px"><?= anchor(
 												'subject_folder',
 												'<div class="btn btn-small btn-info"
@@ -195,11 +212,12 @@
 														><i class="fa fa-folder-open">
 								</i></div>'
 											) ?></td>
-						<td>Completed</td>
+
 					</tr>
 
 					<tr>
 						<td>Reflection</td>
+						<td>Completed</td>
 						<td width="20px"><?= anchor(
 												'subject_folder',
 												'<div class="btn btn-small btn-info"
@@ -208,11 +226,11 @@
 														><i class="fa fa-folder-open">
 								</i></div>'
 											) ?></td>
-						<td>Completed</td>
 					</tr>
 
 					<tr>
 						<td>Other Information</td>
+						<td>Completed</td>
 						<td width="20px"><?= anchor(
 												'subject_folder',
 												'<div class="btn btn-small btn-info"
@@ -221,7 +239,7 @@
 														><i class="fa fa-folder-open">
 								</i></div>'
 											) ?></td>
-						<td>Completed</td>
+
 					</tr>
 
 

@@ -113,3 +113,4 @@ $route['lecturer/folder'] = 'Lecturer_Controller/lecturer_folder';
 $route['subject/Network_Security'] = 'Lecturer_Controller/lecturer_subject/Network_Security';
 $route['Net_Sec/CSI'] = 'Lecturer_Controller/lecturer_subject/Net_Sec_CSI';
 $route['Net_Sec/CSI/upload'] = 'Lecturer_Controller/lecturer_subject/Net_Sec_CSI_upload';
+$route['Net_Sec/CSI/view'] = 'Lecturer_Controller/lecturer_subject/Net_Sec_CSI_View';

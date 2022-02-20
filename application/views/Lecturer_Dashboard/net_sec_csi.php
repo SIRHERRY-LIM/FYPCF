@@ -118,7 +118,7 @@
 	<section class="home-section">
 		<div class="text" style="margin-left: 6%;">Course Specific Information</div>
 
-
+		<?= $this->session->flashdata('message_csi'); ?>
 		<!-- <?php if ($error !== null) : echo $error;
 				endif; ?> -->
 
