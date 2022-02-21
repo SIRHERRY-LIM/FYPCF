@@ -36,7 +36,7 @@
 
 
 <body>
-	<div class="sidebar">
+	<div class="sidebar" style="height: 100vh;">
 
 		<div class="logo-details">
 			<i class="logo-icon" id="logo_icon" style="transition: all 0.5s ease;">
@@ -151,41 +151,126 @@
 				</li>
 			</a>
 		</ul>
+
 	</div>
 	<section class="home-section">
-		<div class="text" style="margin-left: 6%;">Welcome Admin, <strong style="color:mediumslateblue;"> </div>
+		<div class="text" style="margin-left: 6%;">Network Security Course File</div>
 
-		<div class="card-batch" style="width: 18rem; margin-left: 6%;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Current Batch</h5>
-				<p class="card-text">
-				<h3 style="text-align: center;"><strong>2021</strong></h3>
-				</p>
-				<p class="semester" style="text-align: center;">Semester 1
-				</p>
-			</div>
-		</div>
+		<div class="admin-container container-fluid">
+			<div class="table-admin table-responsive text-nowrap">
+				<!--Table-->
+				<table class="table table-striped table-bordered table-hover table-sm">
 
-		<div class="card-submission" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Complete Submission</h5>
-				<p class="card-text">
-				<h1 style="text-align: center;"><strong>70%</strong></h1>
-				</p>
-			</div>
-		</div>
+					<!--Table head-->
+					<thead>
+						<tr>
+							<th style="text-align: center;">Types of
+								Folder</th>
+							<th style="text-align: center;">Completion Status</th>
+							<th style="text-align: center;">Folder</th>
 
-		<div class="card-incomplete" style="width: 18rem;">
-			<div class="card-body">
-				<h5 class="card-title" style="text-align: center;color: rgba(0, 0, 0, 0.53); font-weight:500;">Incomplete Submission</h5>
-				<p class="card-text">
-				<h1 style="text-align: center;"><strong>30%</strong></h1>
-				</p>
-			</div>
-		</div>
+						</tr>
+					</thead>
+					<!--Table head-->
+					<tr>
+						<td>Course Specific Information</td>
+						<td>Completed</td>
+						<td width="20px"><?= anchor(
+												'Net_Sec/CSI/view',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+					</tr>
+
+					<tr>
+						<td>Students List & Student Attendance Analysis</td>
+						<td>Completed</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+
+					</tr>
+
+					<tr>
+						<td> List of Assessments</td>
+						<td>Completed</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
 
 
+					</tr>
 
+					<tr>
+						<td>Students Performance – Mark & Grade</td>
+						<td>Completed</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+					</tr>
+
+					<tr>
+						<td>Students Feedback</td>
+						<td>Completed</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+					</tr>
+
+					<tr>
+						<td>Reflection</td>
+						<td>Completed</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+
+					</tr>
+
+					<tr>
+						<td>Other Information</td>
+						<td>Completed</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+
+					</tr>
+
+
+					<!--Table body-->
+					<tbody>
 
 
 

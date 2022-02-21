@@ -173,10 +173,77 @@
 						</tr>
 					</thead>
 					<!--Table head-->
+					<tr>
+						<td>KP00XXX</td>
+						<td>Network Fundamental</td>
+						<td width="20px"><?= anchor(
+												'folder/net_sec_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+						<td>Completed</td>
+					</tr>
 
+					<tr>
+						<td>KP01XXX</td>
+						<td>Network Security</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+						<td>Completed</td>
+					</tr>
+
+					<tr>
+						<td>KP02XXX</td>
+						<td>Network WAN</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+						<td>Completed</td>
+					</tr>
+
+					<tr>
+						<td>KP03XXX</td>
+						<td>Web Development</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+						<td>Completed</td>
+					</tr>
+
+					<tr>
+						<td>KP04XXX</td>
+						<td>Crytopgraphy</td>
+						<td width="20px"><?= anchor(
+												'subject_folder',
+												'<div class="btn btn-small btn-info"
+														style="background: linear-gradient(90.29deg, 
+		#9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);"
+														><i class="fa fa-folder-open">
+								</i></div>'
+											) ?></td>
+						<td>Completed</td>
+					</tr>
 					<!--Table body-->
 					<tbody>
-
 
 	</section>
 	<script>

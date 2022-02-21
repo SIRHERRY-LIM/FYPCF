@@ -130,19 +130,25 @@
 							<th style="text-align: center;">No / Filename</th>
 							<th style="text-align: center;">File</th>
 							<th colspan="1" style="text-align: center;">Upload Date</th>
+							<th colspan="3" style="text-align: center;">Action</th>
 						</tr>
 					</thead>
 					<!--Table head-->
 					<?php $no = 1;
 					foreach ($csi as $c) : ?>
 						<tr>
-							<td><?= $no++ ?> <?= $c->file ?></td>
-							<td>
+							<td style="text-align: left;width:15%;"><?= $no++ ?> <?= $c->file ?></td>
+							<td style="width: 75%;">
 								<iframe src="<?= base_url('assets/FileSubject/Net_Sec/') . $c->file  ?>  " style=" width: 100%;height: 100vh;margin-buttom:20%; border:none">
 								</iframe>
 
 							</td>
 							<td><?= $c->upload_date ?></td>
+							<td>
+								<a href="<?= base_url('Net_Sec/CSI/delete/') . $c->id ?>" class="btn btn-danger btn-sm">Delete</a>
+
+
+							</td>
 						</tr>
 					<?php endforeach; ?>
 

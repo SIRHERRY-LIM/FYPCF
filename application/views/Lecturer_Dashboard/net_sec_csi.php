@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/admin_dashboard.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/Admin_dash_homesection.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/csi_style.css">
 
 	<!-- FontAwesome CSS -->
 	<link href="<?php echo base_url() ?>assets/css/all.css" rel="stylesheet" type="text/css">
@@ -116,23 +117,40 @@
 		</ul>
 	</div>
 	<section class="home-section">
-		<div class="text" style="margin-left: 6%;">Course Specific Information</div>
+		<div class="text" style="text-align:center">Course Specific Information</div>
+
 
 		<?= $this->session->flashdata('message_csi'); ?>
+
 		<!-- <?php if ($error !== null) : echo $error;
 				endif; ?> -->
 
-		<?php echo form_open_multipart('Net_Sec/CSI/upload'); ?>
 
-		<input type="file" name="userfile" size="20" />
+		<div class="container-fluid" id="csi">
+			<div class="container-fluid" id="inside-container">
 
-		<br /><br />
+				<?php echo form_open_multipart('Net_Sec/CSI/upload'); ?>
 
-		<input type="submit" value="upload" />
+				<input type="file" name="userfile" size="20" id="csi" />
 
-		</form>
+				<br /><br />
+
+				<input type="submit" value="upload" id="csi-upload" />
+
+				</form>
 
 
+				<a href="<?= base_url('Net_Sec/CSI/view') ?>">
+					<button class="btn btn-small btn-primary" style="margin-top:8%; width:100%;
+		background: #8E2DE2;  
+background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2); 
+background: linear-gradient(to right, #4A00E0, #8E2DE2); ">
+						</i> Go to View</button></a>
+
+
+			</div>
+
+		</div>
 
 	</section>
 	<script>

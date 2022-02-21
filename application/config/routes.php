@@ -99,6 +99,7 @@ $route['batch/add'] = 'Admin_Controller/batch/input';
 //The Folder Routes
 $route['folder'] = 'Admin_Controller/folder/index';
 $route['folder/add_subject'] = 'Admin_Controller/folder/add_new_subject';
+$route['folder/net_sec_folder'] = 'Admin_Controller/folder/NetSec';
 
 
 /*// Route for Lecturer // */
@@ -114,3 +115,4 @@ $route['subject/Network_Security'] = 'Lecturer_Controller/lecturer_subject/Netwo
 $route['Net_Sec/CSI'] = 'Lecturer_Controller/lecturer_subject/Net_Sec_CSI';
 $route['Net_Sec/CSI/upload'] = 'Lecturer_Controller/lecturer_subject/Net_Sec_CSI_upload';
 $route['Net_Sec/CSI/view'] = 'Lecturer_Controller/lecturer_subject/Net_Sec_CSI_View';
+$route['Net_Sec/CSI/delete/(:any)'] = 'Lecturer_Controller/lecturer_subject/delete_csi/$1';

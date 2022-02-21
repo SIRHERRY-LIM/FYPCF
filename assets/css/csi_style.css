@@ -1,0 +1,68 @@
+
+.container-fluid 
+{
+background:linear-gradient(165.81deg, rgba(103, 38, 240, 0.74) 0%, rgba(103, 38, 240, 0.6) 0.01%, rgba(103, 38, 240, 0.47) 65.1%);
+width: 50%;
+height: 75vh;
+border-radius: 3%;
+padding-top: 2%;
+}
+
+.container-fluid .container-fluid
+{
+background: linear-gradient(296.28deg, rgba(255, 255, 255, 0.84) 0.66%, rgba(255, 255, 255, 0) 95.83%);
+backdrop-filter: blur(4px);
+padding-right: 1%;
+width: 100%;
+height: 94%;
+padding-top: 25%;
+padding-bottom: 25%;
+padding-left: 23%;
+padding-right: 25%;
+top: 50%;
+
+}
+
+.container-fluid .container-fluid #csi
+{
+background: #2980B9;
+background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
+background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
+
+
+}
+
+.container-fluid .container-fluid #csi-upload
+{
+	background: linear-gradient(90.29deg, #9145F2 0.12%, rgba(187, 69, 242, 0.76) 99.99%, rgba(155, 69, 242, 0) 100%);
+	width: 348px;
+	height: 35px;
+	font-size: larger;
+	border: none;
+}
+
+
+@media (max-width: 1095px)
+{
+	.container-fluid{
+		width: 90%;
+		
+	}
+.container-fluid .container-fluid{
+	padding-left: 5%;
+}
+
+.container-fluid .container-fluid #csi
+{
+	width: 100%;
+}
+.container-fluid .container-fluid #csi-upload
+{
+	width: 100%;
+}
+
+
+}
+
+	
+

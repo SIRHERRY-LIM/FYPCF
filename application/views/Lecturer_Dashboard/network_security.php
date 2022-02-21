@@ -172,6 +172,15 @@ background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);"
 								</i></div>'
 											) ?></td>
 
+						<td width="20px"><?= anchor(
+												'#',
+												'<div class="btn btn-small btn-info"
+														style="background-color: #045de9;
+background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);"
+														><i class ="fa fa-info">
+								</i></div>'
+											) ?></td>
+
 					</tr>
 
 					<tr>
@@ -186,6 +195,16 @@ background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);"
 								</i></div>'
 											) ?></td>
 
+						<td width="20px"><?= anchor(
+												'#',
+												'<div class="btn btn-small btn-info"
+														style="background-color: #045de9;
+background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);"
+														><i class ="fa fa-info">
+								</i></div>'
+											) ?></td>
+
+
 					</tr>
 
 					<tr>
@@ -199,6 +218,17 @@ background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);"
 														><i class="fa fa-folder-open">
 								</i></div>'
 											) ?></td>
+
+						<td width="20px"><?= anchor(
+												'#',
+												'<div class="btn btn-small btn-info"
+														style="background-color: #045de9;
+background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);"
+														><i class ="fa fa-info">
+								</i></div>'
+											) ?></td>
+
+
 					</tr>
 
 					<tr>
@@ -213,6 +243,17 @@ background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);"
 								</i></div>'
 											) ?></td>
 
+						<td width="20px"><?= anchor(
+												'#',
+												'<div class="btn btn-small btn-info"
+														style="background-color: #045de9;
+background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);"
+														><i class ="fa fa-info">
+								</i></div>'
+											) ?></td>
+
+
+
 					</tr>
 
 					<tr>
@@ -226,6 +267,17 @@ background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);"
 														><i class="fa fa-folder-open">
 								</i></div>'
 											) ?></td>
+
+						<td width="20px"><?= anchor(
+												'#',
+												'<div class="btn btn-small btn-info"
+														style="background-color: #045de9;
+background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);"
+														><i class ="fa fa-info">
+								</i></div>'
+											) ?></td>
+
+
 					</tr>
 
 					<tr>
@@ -239,6 +291,17 @@ background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);"
 														><i class="fa fa-folder-open">
 								</i></div>'
 											) ?></td>
+
+						<td width="20px"><?= anchor(
+												'#',
+												'<div class="btn btn-small btn-info"
+														style="background-color: #045de9;
+background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);"
+														><i class ="fa fa-info">
+								</i></div>'
+											) ?></td>
+
+
 
 					</tr>
 

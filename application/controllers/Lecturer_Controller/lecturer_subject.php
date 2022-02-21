@@ -60,4 +60,19 @@ class lecturer_subject extends CI_Controller
 			//$this->load->view('Lecturer_Dashboard/net_sec_csi_file', $data);
 		}
 	}
+
+	public function delete_csi($id)
+	{
+		$delete = $this->net_sec_csi_model->delete_csi_file($id);
+		$data = $this->net_sec_csi_model->get_data_id($id)->row();
+		$name = base_url('assets/FileSubject/Net_Sec' . $data->file);
+
+		if (is_readable('./assets/FileSubject/Net_Sec/' . $name)) {
+			unlink('./assets/FileSubject/Net_Sec/' . $name);
+		} else {
+			echo "file not found";
+		}
+
+		redirect('Net_Sec/CSI/view');
+	}
 }

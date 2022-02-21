@@ -14,4 +14,9 @@ class folder extends CI_Controller
 	{
 		$this->load->view('Dashboard/folder');
 	}
+
+	public function NetSec()
+	{
+		$this->load->view('Dashboard/Net_sec_folder');
+	}
 }

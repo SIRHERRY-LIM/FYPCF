@@ -15,4 +15,16 @@ class net_sec_csi_model extends CI_Model
 
 		return $this->db->insert('net_sec_csi', $data);
 	}
+
+	public function delete_csi_file($id)
+	{
+		$this->db->where('id', $id);
+		return $this->db->delete('net_sec_csi');
+	}
+
+	public function get_data_id($id)
+	{
+		$this->db->where('id', $id);
+		return $this->db->get('net_sec_csi');
+	}
 }
